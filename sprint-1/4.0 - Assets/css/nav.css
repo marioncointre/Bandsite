@@ -1,0 +1,39 @@
+
+
+nav ul{
+    background:#444;
+    list-style-type: none;
+    display:flex;
+    flex-direction:column;
+    width: 100vw;
+  }
+  nav ul li {
+    color:#f9f9f9;
+    display:block;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+  }
+  nav ul li a:hover{
+    background:rgba(0,0,0, .4);
+  }
+  
+  @media only screen and (min-width:30em){
+    nav ul{
+      flex-direction:row;
+      justify-content:space-between;
+    }
+    nav ul li{
+      flex:1 0 auto;
+      text-align: center;
+    }
+  }
+
+  .menu {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .menu__nav {
+      display: flex;
+      flex-direction: row;
+  }
