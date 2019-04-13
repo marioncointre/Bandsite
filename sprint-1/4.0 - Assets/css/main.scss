@@ -18,50 +18,49 @@ html, body {
 
 .menu {
     display: flex;
-    width: 100vw;
     height: 80px;
-    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow: column;
     background-color: $black-color;
+
+    .menu__logo {
+        padding-left: 16px;
+    }
+
+    .menu__nav {
+        width: 100%;
+        padding-right: 16px;
 
     ul {
         display: flex;
-        width: 100%;
-        list-style: none;
-        flex-wrap: wrap;
-        align-content: space-evenly;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
         
-
          li {
             color: white;
-            text-align:center;
             padding-bottom: 6px;
         }
-
-        li:first-child {
-            width: 100%; 
-            padding-bottom: 16px;
-            padding-top: 12px;
-        }
-
-        li:nth-child(2), li:last-child {
-            width: 50%;
-        
-        }
-        .selected {
-            border-bottom : 3px solid white;
-        }
-     }
-    
+    }
+}    
         }
 
     main {
         width: 100%;
     
+        .main__hero:before {
+            background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg"); 
+            z-index: -2;
+            opacity: 0.5;
+            color: #323232
+            }
+
+
         .main__hero {
             height: 183px;
-            background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+            background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg"); 
+            background-color: #323232;
+            opacity: 0.5;
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
@@ -76,6 +75,8 @@ html, body {
         }
 
         .about {
+            @include column;
+            align-items: center;
             margin-left: 16px;
             margin-right: 16px;
 
@@ -84,7 +85,6 @@ html, body {
                 text-transform: capitalize;
             }
             .about__content {
-                @include column;
                 margin-bottom: 40px;
 
                 h2 {
@@ -156,10 +156,10 @@ html, body {
     }
     footer {
         background-color: $black-color;
-        display: flex;
+        @include row;
         justify-content: center;
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 180px;
+        padding-right: 180px;
 
         .footer__contact {            
             width: 100%;
@@ -212,7 +212,7 @@ html, body {
         }
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width:1439px) {
         .menu {
 
             ul {
@@ -358,7 +358,8 @@ html, body {
                         width: 896px;
 
                         img {
-                            max-width: 896px;
+                            width: 896px;
+                            height: 450px;
                         }
                     }
                     
@@ -410,8 +411,6 @@ html, body {
             }
         }
         footer {
-            justify-content: center;
-
 
             .footer {
                 width: 1080px;
@@ -427,7 +426,6 @@ html, body {
                         align-items: center;
     
                     .footer__contact--img {
-                        justify-content: space-between;
                         width: 66%;
                         align-items: center;
                        
@@ -445,15 +443,9 @@ html, body {
 
                 }
 
-
                 .footer__columns {
                     @include row;
-                    justify-content: space-around;
-                    
-                    .footer__columns--agency {
-                        font-weight: $font-bold;
-                    }
-    
+                    justify-content: space-around;    
                 }
             }
 

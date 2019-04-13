@@ -1,0 +1,290 @@
+@import 'colors';
+@import 'fonts';
+@import 'mixens';
+
+/* Resetting  user agent styling */
+html, body, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+html, body {
+    color: #323232;
+    font-family: 'Avenir Next';
+  }
+
+
+/* default rules for @media (width: 320px) */
+
+/*header {
+    height: 80px;
+    background-color: $black-color;
+
+    .menu {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        width: 40%;
+
+        .menu__logo {
+            padding-left: 180px;
+        }
+
+        .menu__nav {
+            // width: 50%;
+            // padding-right: 56px;
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style-type: none;
+                
+                li {
+                    color: white;
+                    padding-bottom: 6px;
+                    margin-right: 56px;
+                }
+            }
+        }    
+    }
+}
+*/
+.menu {
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $black-color;
+    flex-wrap: nowrap;
+
+    ul {
+        display: flex;
+        width: 100%;
+        list-style: none;
+        flex-wrap: nowrap;
+        align-content: space-evenly;
+        padding-left: 180px;
+        justify-content: flex-start;
+        align-items: center;
+        
+
+         li {
+            font-size: 24px;
+            color: white;
+            text-align:center;
+            padding-bottom: 6px;
+        }
+
+        li:first-child {
+            width: 30%; 
+            padding-bottom: 16px;
+            padding-top: 12px;
+        }
+
+        li:nth-child(2), li:last-child {
+            width: 10%;
+            text-align: left; 
+            margin-right: 56px;
+        
+        }
+        .selected {
+            border-bottom : 3px solid white;
+        }
+     }
+    
+        }
+  
+
+    main {
+        width: 100%;
+    
+        .main__hero {
+            height: 670px;
+            background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 48px;
+    
+            h1 {
+                color: $primary-color;
+                margin-left: 180px;
+            }
+        }
+
+        .about {
+            @include column;
+            align-items: center;
+            margin-left: 180px;
+            margin-right: 180px;
+
+            h1 {
+                margin-bottom: 24px;
+                text-transform: capitalize;
+            }
+            .about__content {
+                width: 896px;
+                margin-bottom: 40px;
+
+                h2 {
+                    text-align: left;
+                    margin-bottom: 24px;
+                }
+    
+                .about__content--img {
+                    width: 896px;
+                    img {
+                        max-width: 896px;
+                }
+            }
+                .about__content--quote {
+                    text-align: left;
+                    margin-bottom: 40px;
+                    font-weight: bold;
+                    margin-top: 48px;
+
+                    p {
+                        margin-top: 40px;
+                    }
+                }
+
+                .about__content--title {
+                        margin-bottom: 32px;
+                    
+                        .about__content--title--h2 {
+                            @include row;
+                            justify-content: flex-start;    
+
+                        }
+                    }
+
+                .about__content--columns {
+                    @include column;
+                    align-items: flex-start;
+                    text-align: justify;
+                    margin-bottom: 48px;
+
+
+                        p:first-child {
+                            margin-bottom: 40px;
+                        }
+                
+                }
+    
+            }
+        
+        }
+        .main__gallery {
+
+            .main__gallery--grey {
+                background-color: $lightgrey; 
+                padding-bottom: 40px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .main__gallery--margin {
+                @include column;
+                margin-left: 16px;
+                margin-right: 16px;
+                width: 1080px;
+                padding-top: 48px;
+                justify-content: center;
+            }
+            
+            h3 {
+                padding-top: 32px;
+            }
+            
+            .main__gallery--photos {
+             margin-top: 0px;
+             width: 100%;
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-evenly;
+
+             h1 {
+                margin-bottom: 64px;
+            }
+    
+             img {
+                 width: 344px;   
+             }
+         }   
+        }
+    }
+    footer {
+        background-color: $black-color;
+        display: flex;
+        justify-content: center;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        .footer {
+            width: 1080px;
+
+        .footer__contact {            
+            width: 100%;
+            padding-top: 48px;
+            @include column;
+            align-content: flex-start;
+            color: $primary-color;
+
+            .footer__contact--title {
+                @include row;
+                justify-content: space-between;
+                align-items: center;
+
+                h1 {
+                    padding-bottom: 40px;
+                }
+
+                .footer__contact--img {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 40px;
+                    width: 66%;
+                    align-items: center;
+
+                   
+                    .footer__contact--icons {
+                        display: flex;
+                        justify-content: space-evenly;
+                        width: 40%;
+                    }
+                    .footer__logo {
+                        display: unset;
+                        justify-self: flex-start;
+                }
+                }
+            }
+        }
+
+        .footer__columns {
+            @include row;
+            justify-content: space-around;
+            font-weight: 100;
+
+            
+            .footer__columns--agency, .footer__columns--address, .footer__columns--email {
+                padding-bottom: 10px;
+            }
+
+            .footer__columns--agency {
+                font-weight: $font-bold;
+            }
+
+        }
+        .footer__copyright {
+            font-size: $font-family-mobile-xs;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+        }
+    }
+    
+    }

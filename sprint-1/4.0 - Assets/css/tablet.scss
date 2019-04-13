@@ -1,0 +1,22 @@
+.menu {
+
+    ul {
+        flex-wrap: nowrap;
+        margin-left: 24px;
+        justify-content: flex-start;
+        align-items: center;
+
+        li:first-child {
+            width: 30%;
+            text-align: left; 
+        }
+
+    
+       li:nth-child(2), li:last-child {
+            width: 10%;
+            text-align: left; 
+            margin-right: 56px;
+        }
+
+    }
+}

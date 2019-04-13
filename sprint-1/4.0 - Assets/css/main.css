@@ -1,9 +1,14 @@
 /* Variables */
 @font-face {
   font-family: 'Avenir Next';
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold");
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+  src: url("../Fonts/Linotype _AvenirNextLTPro_Regular.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro.ttf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.ttf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Bold.otf");
+  src: url("../Fonts/Linotype_ AvenirNextLTPro_Bold.ttf");
 }
 
 /* Variables */
@@ -23,18 +28,22 @@ h1, h2, h3, h4, p {
   .hero-header {
     font-size: 60px;
     line-height: 68px;
+    font-weight: 700;
   }
   h1 {
     font-size: 36px;
     line-height: 44px;
+    font-weight: 700;
   }
   h2 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 700;
   }
   h3 {
     font-size: 16px;
     line-height: 24px;
+    font-weight: 500;
   }
   h4, p {
     font-size: 14px;
@@ -55,10 +64,12 @@ h1, h2, h3, h4, p {
   h1 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 700;
   }
   h2 {
     font-size: 14px;
     line-height: 22px;
+    font-weight: 500;
   }
   h4, p, ul, ol {
     font-size: 13px;
@@ -86,58 +97,60 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
   height: 80px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   background-color: #323232;
 }
 
-.menu ul {
+.menu .menu__logo {
+  padding-left: 16px;
+}
+
+.menu .menu__nav {
+  width: 100%;
+  padding-right: 16px;
+}
+
+.menu .menu__nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  list-style: none;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: space-evenly;
-      align-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
 }
 
-.menu ul li {
+.menu .menu__nav ul li {
   color: white;
-  text-align: center;
   padding-bottom: 6px;
-}
-
-.menu ul li:first-child {
-  width: 100%;
-  padding-bottom: 16px;
-  padding-top: 12px;
-}
-
-.menu ul li:nth-child(2), .menu ul li:last-child {
-  width: 50%;
-}
-
-.menu ul .selected {
-  border-bottom: 3px solid white;
 }
 
 main {
   width: 100%;
 }
 
+main .main__hero:before {
+  background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+  z-index: -2;
+  opacity: 0.5;
+  color: #323232;
+}
+
 main .main__hero {
   height: 183px;
   background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+  background-color: #323232;
+  opacity: 0.5;
   background-size: cover;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -158,6 +171,16 @@ main .main__hero h1 {
 }
 
 main .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 16px;
   margin-right: 16px;
 }
@@ -168,13 +191,6 @@ main .about h1 {
 }
 
 main .about .about__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin-bottom: 40px;
 }
 
@@ -271,11 +287,15 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 180px;
+  padding-right: 180px;
 }
 
 footer .footer__contact {
@@ -346,7 +366,7 @@ footer .footer__columns .footer__columns--agency, footer .footer__columns .foote
 }
 
 footer .footer__columns .footer__columns--agency {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 footer .footer__copyright {
@@ -355,7 +375,7 @@ footer .footer__copyright {
   margin-bottom: 40px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .menu ul {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -506,7 +526,8 @@ footer .footer__copyright {
     width: 896px;
   }
   main .about .about__content .about__content--img img {
-    max-width: 896px;
+    width: 896px;
+    height: 450px;
   }
   main .about .about__content .about__content--quote {
     margin-top: 48px;
@@ -553,11 +574,6 @@ footer .footer__copyright {
   main .main__gallery .main__gallery--margin .main__gallery--photos img {
     width: 344px;
   }
-  footer {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   footer .footer {
     width: 1080px;
   }
@@ -580,9 +596,6 @@ footer .footer__copyright {
             align-items: center;
   }
   footer .footer .footer__contact .footer__contact--title .footer__contact--img {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     width: 66%;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -611,9 +624,6 @@ footer .footer__copyright {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-  }
-  footer .footer .footer__contact .footer__columns .footer__columns--agency {
-    font-weight: bold;
   }
 }
 /*# sourceMappingURL=main.css.map */
