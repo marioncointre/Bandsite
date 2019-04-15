@@ -13,16 +13,14 @@ html, body {
     font-family: 'Avenir Next';
   }
 
-
-  
   /* Default CSS styling for mobile 320px */
     @media (min-width: 320px){
+    
+    /* Navigation styling */
     .menu {
         width:100%;
         height: 80px;
         @include row;
-        align-items: center;
-        justify-content: center;
         background-color: $black-color;
 
         &__logo {
@@ -35,7 +33,6 @@ html, body {
             flex-flow: row wrap;
             list-style-type: none;
             align-items: center;
-            justify-content: center;
             
             li {
                 flex:1 1 50%;
@@ -43,13 +40,13 @@ html, body {
                 padding-bottom: 6px;
                 text-align: center;
             
-                &:first-child {
+                &:first-child { // logo
                     flex:1 1 100%;
                     padding-bottom: 16px;
                     padding-top: 10px;
                 }
 
-                &.selected {
+                &.selected { // active tab
                     display: inline-block;
                     position: relative;
                 }
@@ -63,7 +60,7 @@ html, body {
                     margin-top: 19px;
                 }
 
-                &:hover {
+                &:hover { //hover interaction
                     color: yellow;
                     font-weight: bold;
                 }
@@ -71,10 +68,12 @@ html, body {
         }
     }
 
+    /* Main content styling */
+
     main {
         width: 100%;
     
-        .main__hero {
+        .main__hero { // Hero section
             height: 183px;
             background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg"); 
             background-size: cover;
@@ -84,7 +83,7 @@ html, body {
             align-items: center;
             margin-bottom: 32px;
 
-            &--layer {
+            &--layer { // image opacity
                 background-color: #323232;
                 opacity: 0.5;
             }
@@ -95,7 +94,7 @@ html, body {
             }
         }
 
-        .about {
+        .about { // About musicians section
             @include column;
             align-items: center;
             margin-left: 16px;
@@ -106,7 +105,7 @@ html, body {
                 margin-bottom: 24px;
                 text-transform: capitalize;
             }
-            .about__content {
+            .about__content { // main about content
                 margin-bottom: 40px;
 
                 >h2 {
@@ -114,7 +113,7 @@ html, body {
                     margin-bottom: 24px;
                 }
     
-                .about__content--img {
+                .about__content--img { //about image hero
                     @include column;
                     margin-bottom: 24px;
 
@@ -122,8 +121,7 @@ html, body {
                     max-width: 288px;
                 }
             }
-                .about__content--quote {
-                    text-align: left;
+                .about__content--quote { // about quote
                     margin-bottom: 40px;
                     font-weight: bold;
 
@@ -131,11 +129,11 @@ html, body {
                         margin-bottom: 32px;
                     }
                 }                   
-                .about__content--title {
+                .about__content--title { // about paragraph title
                     text-align: left;
                 }
 
-                .about__content--columns {
+                .about__content--columns { // about paragraphs
                     align-items: flex-start;
                     @include column;
 
@@ -145,14 +143,14 @@ html, body {
                 }
             }
         }
-        .gallery {
+        .gallery { // Photo gallery section
             background-color: $lightgrey; 
             padding-bottom: 24px;
 
             &__margin {
                 @include column;
-                margin-left: 16px;
-                margin-right: 16px;
+                margin-left: 1em;
+                margin-right: 1em;
                 padding-top: 2em;
                 
                 &--photos {
@@ -164,13 +162,12 @@ html, body {
 
                     img {
                         width: 288px; 
-                        margin-bottom:16px; 
+                        margin-bottom: 1em; 
                         filter: grayscale(100%); 
                     }
 
                     img:hover {
                         filter: grayscale(0%); 
-
                     }
                 
                 }
@@ -178,6 +175,8 @@ html, body {
         }
     }
     
+    /* Footer styling */
+
     footer {
         background-color: $black-color;
         @include row;
@@ -185,53 +184,53 @@ html, body {
 
         .footer {
 
-        &__contact {            
+        &__contact {       
             width: 100%;
             box-sizing: border-box;
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 1em;
+            padding-right: 1em;
             padding-top: 40px;
             @include column;
             align-content: flex-start;
             color: $primary-color;
 
-            &--title {
+            &--title { // title + icons    
                 @include column;
 
                 h1 {
-                    padding-bottom: 30px;
+                    padding-bottom: 1em;
                 }
 
-                .footer__contact--img {
+                .footer__contact--img { // icons + logo
                     display: flex;
                     justify-content: space-between;
                     padding-bottom: 40px;
                    
-                    .footer__contact--icons {
+                    .footer__contact--icons { // icons
                         display: flex;
                         justify-content: space-between;
                         width: 40%;
                     }
-                    .footer__logo {
+                    .footer__logo { // logo
                         display: none;
                     }
                 }
             }
         }
 
-        &__columns {
+        &__columns { // agency details
             @include column;
             
             &--agency, &--address, &--email {
                 padding-bottom: 10px;
             }
 
-            &--agency {
+            &--agency { // agency name
                 font-weight: $font-demibold;
             }
         }
         
-        &__copyright {
+        &__copyright { //copyright mention
             font-weight: 100;
             margin-top: 40px;
             margin-bottom: 40px;
@@ -243,7 +242,9 @@ html, body {
 
   /* styling for tablet from 768px */
     @media (min-width: 768px) {
-     
+
+    /* Navigation styling */
+
     .menu {                
         justify-content: space-between;
 
@@ -255,27 +256,22 @@ html, body {
             li {
                 margin-right: 48px;
 
-
                 &:first-child {
                     margin-left: 24px;
-                    padding: 0px;
+                    padding: 0;
                 }
 
                 &.selected:after {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    width: 100%;
-                    border-bottom: 4px solid white;
                     margin-top: 50px;        
-                    }
                 }
             }
-        }    
+        }
+    }    
     
+    /* Main content styling */
     main {
 
-        .main__hero {
+        .main__hero { // Hero section
             height: 400px;
             margin-bottom: 48px;
 
@@ -284,18 +280,12 @@ html, body {
             }
 
         }
-        .about {
+        .about { // About musicians section
             margin-left: 24px;
             margin-right: 24px;
 
-            h1 {
-                margin-bottom: 24px;
-                align-self: flex-start;
-
-            }
             .about__content {
                 width: 720px;
-                margin-bottom: 40px;
     
                 .about__content--img {
                     img {
@@ -303,7 +293,6 @@ html, body {
                 }
             }
                 .about__content--quote {
-                    margin-bottom: 40px;
                     margin-top: 48px;
 
                     p {
@@ -330,7 +319,7 @@ html, body {
                 }
             }
         }
-        .gallery {
+        .gallery {// Photo gallery section
 
             &__margin {
                 margin-left: 24px;
@@ -343,7 +332,6 @@ html, body {
                 }
             
                 &--photos {
-                    flex-wrap: wrap;
                     justify-content: space-between;
                     align-content: space-evenly;
                     height: 426px;
@@ -356,7 +344,7 @@ html, body {
          }   
         }
     }
-
+/* Footer styling */
         footer {
     
             .footer {
@@ -364,11 +352,10 @@ html, body {
     
             &__contact {            
                 width: 720px;
-                padding-top: 48px;
                 margin-left: 24px;
                 margin-right: 24px;
     
-                &--title {
+                &--title { // title + icons
                     @include row;
                     justify-content: space-between;
     
@@ -380,11 +367,11 @@ html, body {
                         width: 66%;
                         align-items: center;
 
-                        .footer__contact--icons {
+                        .footer__contact--icons { // icons + logo
                             justify-content: space-evenly;
                             width: 35%;
                         }
-                        .footer__logo {
+                        .footer__logo { // logo
                             display: unset;
                             justify-self: flex-start;
                         }
@@ -392,7 +379,7 @@ html, body {
                 }
             }
     
-            &__columns {
+            &__columns { //agency details
                 @include row;
                 justify-content: space-between;            
             }
