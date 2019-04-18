@@ -78,9 +78,8 @@ html, body {
             background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg"); 
             background-size: cover;
             background-repeat: no-repeat;
-            display: flex;
+            @include column;
             justify-content: flex-start;
-            // align-items: center;
             margin-bottom: 32px;
 
             &--layer { // image opacity
@@ -91,15 +90,26 @@ html, body {
             h1, h3 {
                 color: $primary-color;
                 margin-left: 16px;
+                margin-bottom: 16px;
             }
         }
+
         .titles {
-            margin-top: 64px;
             margin-top: 64px;
             @include column;
         }
 
-        .shows{
+        .music {
+            margin-top: 64px;
+            margin-left: 16px;
+            margin-right: 16px;
+
+            iframe {
+                height: 150px;
+            }
+        }
+
+        .shows {
             @include column;
             margin-left: 16px;
             margin-right: 16px;
@@ -107,18 +117,38 @@ html, body {
             h1 {
                 margin-bottom: 40px;
             }
+
+            .shows-table {
+                width: 100%; 
+                border-collapse: collapse; 
+                
+                table, thead, tbody, th, td, tr { 
+                    display: block; 
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .table-hidden {
+                    display:none;
+                }
+
+                .date {
+                    font-weight: $font-bold;
+
+                }
+
             .event {
-                border-bottom: 1px solid GREY;
+                border-bottom: 1px solid $silver-color;
+                margin-top: 32px;
                 
                 h5 {
-                    margin-bottom: 16px;
                     color: $silver-color;
                     text-transform: uppercase;
                 }
 
                 p {
                     margin-top: 16px;
-                    font-weight: $font-bold;
+                    margin-bottom: 24px;
                 }
 
                 .date, .venue, .location {
@@ -129,12 +159,14 @@ html, body {
                     background-color: $black-color;
                     color: $primary-color;
                     width: 100%;
-                    height: 24px;
+                    height: 40px;
                     text-align: center;
                     vertical-align: center;
                     margin-bottom:16px;
                     margin-top: 32px;
                     text-transform: uppercase;
+                    font-weight: $font-demibold;
+                    border-radius: 8px;
                 }
             }
         }
@@ -190,7 +222,7 @@ html, body {
             }
         }
     }
-    
+}
     /* Footer styling */
 
     footer {
@@ -285,81 +317,168 @@ html, body {
     }    
     
     /* Main content styling */
+ 
     main {
+        width: 100%;
+    
+        .main__hero--show { // Hero section
+            height: 670px;
+            background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 32px;
 
-        .main__hero { // Hero section
-            height: 400px;
-            margin-bottom: 48px;
-
-            h1 {
-                margin-left: 24px;
+            &--layer { // image opacity
+                background-color: #323232;
+                opacity: 0.5;
             }
-
+    
+            h1, h3 {
+                color: $primary-color;
+                margin-left: 24px;
+                margin-bottom: 24px;
+            }
         }
-        .about { // About musicians section
+        
+        .titles {
+            margin-top: 96px;
+            margin-top: 94px;
+            @include column;
+        }
+
+        iframe {
+            margin-top: 64px;
+            margin-left: 24px;
+            width: 50%;
+            height: 20%;
+        }
+
+        .shows {
             margin-left: 24px;
             margin-right: 24px;
+            margin-bottom: 32px;
 
-            .about__content {
-                width: 720px;
-    
-                .about__content--img {
-                    img {
-                        max-width: 720px;
-                }
+            h1 {
+                width: 30%;
+                margin-bottom: 40px;
             }
-                .about__content--quote {
-                    margin-top: 48px;
 
-                    p {
-                        margin-top: 40px;
-                    }
+            .shows-table {
+                width: 100%; 
+                border-collapse: separate; 
+                
+                table, thead, tbody, th, td, tr { 
+                    display: inline-block; 
                 }
 
-                .about__content--title {
-                        margin-bottom: 32px;
-                    }
+                .table-hidden {
+                    display: unset;
+                }
 
-                .about__content--columns {
-                    @include row;
-                    align-items: flex-start;
-                    margin-bottom: 48px;
-                    box-sizing: border-box;
+                .hidden {
+                    display: none;
+                }
 
-                        p:first-child {
-                            margin-right: 12px;
-                        }
-                        p:last-child {
-                            margin-left: 12px;
-                        }
+                .date {
+                    font-weight: $font-bold;
+                }
+
+                .date, .venue, .location {
+                    width: 182px;
+                    // margin-right: 10px;
+                }
+                h5, .theader {
+                    color: $silver-color;
+                    text-transform: uppercase;
+                }
+                .theader {
+                    display: block;
+                }
+
+
+            .event {
+                border-bottom: 1px solid $silver-color;
+                margin-top: 0px;
+                vertical-align: baseline;
+
+                p {
+                    margin-top: 16px;
+                    margin-bottom: 24px;
+                }
+
+                .date, .venue, .location {
+                    margin-top:24px;
+                }
+
+                button {
+                    background-color: $black-color;
+                    color: $primary-color;
+                    width: 160px;
+                    height: 50px;
+                    text-align: center;
+                    vertical-align: center;
+                    margin-bottom:16px;
+                    margin-top: 32px;
+                    text-transform: uppercase;
+                    font-weight: $font-demibold;
                 }
             }
         }
-        .gallery {// Photo gallery section
 
-            &__margin {
-                margin-left: 24px;
-                margin-right: 24px;
-                padding-top: 48px;
-                justify-content: center;
+        .comments { // Comments section
+            @include column;
+            align-items: center;
+            margin-left: 16px;
+            margin-right: 16px;
 
                 h1 {
-                    margin-bottom: 48px;
+                    padding-top: 32px;
+                    padding-bottom : 40px;
                 }
-            
-                &--photos {
-                    justify-content: space-between;
-                    align-content: space-evenly;
-                    height: 426px;
 
-                    img {
+                &__form {
+                    @include row;
+                    &--icon {
+                        margin-right: 16px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }    
+                    }
+                }
+
+                form {
+                    @include column;
+                    width: 224px;
+
+                    input {
+                        border: 1px black solid;
+                        height: 50px;
+                        margin-bottom: 25px;
+                    }
+
+                    button {
+                        background-color: black;
+                        color: white;
+                        height: 35px;
                         width: 224px;
-                        height: 126px;
-                }   
-             }
-         }   
+                        align-self: flex-end;
+                        margin-bottom: 32px;
+
+                    }
+            }
+
+            .comments__published {
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
         }
     }
+}
 /* Footer styling */
         footer {
     
@@ -424,82 +543,43 @@ html, body {
     main {
         .main__hero {
             height: 670px;
-    
-            h1 {
+                h1 {
                 margin-left: 180px;
             }
         }
+        
+            .main__hero--show { 
+                @include row;
 
-        .about {
-            margin-left: 180px;
-            margin-right: 180px;
-            
-            .about__content {
-                width: 896px;
-                @include column;
-                align-items: center;
+                .titles {
+                    margin-top: 160px;
+                    margin-left: 180px;
 
-                h2 {
-                    text-align: left;
-                }
-    
-                .about__content--img {
-                    width: 896px;
-                    img {
-                        min-width: 896px;
-                        height: 450px;
+                    h3 {
+                        margin-bottom: 48px; 
                     }
                 }
-                .about__content--quote {
-                    margin-bottom: 56px;
+                .music {
+                    margin-left: 64px;
+                    align-self: center;
+                    margin-right: 180px;
 
-                    h2 {
-                        margin-bottom: 40px;
+
+        
+                    iframe {
+                        width: 436px;
+                        height: 146px;
                     }
                 }
-                .about__content--title {
-                    align-self: flex-start;
-                }
-
-
-                .about__content--columns {
-                        p:first-child {
-                            margin-right: 20px;
-                        }
-                        p:last-child {
-                            margin-left: 20px;
-                        }
-                }
+        
             }
-        }
 
-        .gallery {
-            width: 100%;
-            padding-bottom: 0px;
-
-            &__margin {
-                width: 1080px;
+            .shows {
+                @include row;
                 margin-left: 180px;
-                margin-right: 180px;
-
-            h1 {
-                margin-bottom: 64px;
             }
             
-            &--photos {
-             height: 627px;
-             margin-top: 0px;
-             margin-bottom: 40px;
-             justify-content: space-between;
-
-                img {
-                    width: 344px;
-                    height: 193px;
-                }   
-            }
-            }   
         }
-    }
     
     footer {
 

@@ -161,6 +161,10 @@ html, body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -173,9 +177,9 @@ html, body {
   main .main__hero--show h1, main .main__hero--show h3 {
     color: #ffffff;
     margin-left: 16px;
+    margin-bottom: 16px;
   }
   main .titles {
-    margin-top: 64px;
     margin-top: 64px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -184,6 +188,14 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  main .music {
+    margin-top: 64px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  main .music iframe {
+    height: 150px;
   }
   main .shows {
     display: -webkit-box;
@@ -199,33 +211,50 @@ html, body {
   main .shows h1 {
     margin-bottom: 40px;
   }
-  main .shows .event {
-    border-bottom: 1px solid GREY;
+  main .shows .shows-table {
+    width: 100%;
+    border-collapse: collapse;
   }
-  main .shows .event h5 {
-    margin-bottom: 16px;
+  main .shows .shows-table table, main .shows .shows-table thead, main .shows .shows-table tbody, main .shows .shows-table th, main .shows .shows-table td, main .shows .shows-table tr {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  main .shows .shows-table .table-hidden {
+    display: none;
+  }
+  main .shows .shows-table .date {
+    font-weight: bold;
+  }
+  main .shows .shows-table .event {
+    border-bottom: 1px solid #AFAFAF;
+    margin-top: 32px;
+  }
+  main .shows .shows-table .event h5 {
     color: #AFAFAF;
     text-transform: uppercase;
   }
-  main .shows .event p {
+  main .shows .shows-table .event p {
     margin-top: 16px;
-    font-weight: bold;
+    margin-bottom: 24px;
   }
-  main .shows .event .date, main .shows .event .venue, main .shows .event .location {
+  main .shows .shows-table .event .date, main .shows .shows-table .event .venue, main .shows .shows-table .event .location {
     margin-top: 24px;
   }
-  main .shows .event button {
+  main .shows .shows-table .event button {
     background-color: #323232;
     color: #ffffff;
     width: 100%;
-    height: 24px;
+    height: 40px;
     text-align: center;
     vertical-align: center;
     margin-bottom: 16px;
     margin-top: 32px;
     text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 8px;
   }
-  main .comments {
+  main .shows .comments {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -239,11 +268,11 @@ html, body {
     margin-left: 16px;
     margin-right: 16px;
   }
-  main .comments h1 {
+  main .shows .comments h1 {
     padding-top: 32px;
     padding-bottom: 40px;
   }
-  main .comments__form {
+  main .shows .comments__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -252,15 +281,15 @@ html, body {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  main .comments__form--icon {
+  main .shows .comments__form--icon {
     margin-right: 16px;
   }
-  main .comments__form--icon img {
+  main .shows .comments__form--icon img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
-  main .comments form {
+  main .shows .comments form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -270,12 +299,12 @@ html, body {
             flex-direction: column;
     width: 224px;
   }
-  main .comments form input {
+  main .shows .comments form input {
     border: 1px black solid;
     height: 50px;
     margin-bottom: 25px;
   }
-  main .comments form button {
+  main .shows .comments form button {
     background-color: black;
     color: white;
     height: 35px;
@@ -284,7 +313,7 @@ html, body {
         align-self: flex-end;
     margin-bottom: 32px;
   }
-  main .comments .comments__published {
+  main .shows .comments .comments__published {
     padding-top: 24px;
     padding-bottom: 24px;
   }
@@ -402,33 +431,126 @@ html, body {
     margin-top: 50px;
   }
   /* Main content styling */
-  main .main__hero {
-    height: 400px;
-    margin-bottom: 48px;
+  main {
+    width: 100%;
   }
-  main .main__hero h1 {
-    margin-left: 24px;
-  }
-  main .about {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-  main .about .about__content {
-    width: 720px;
-  }
-  main .about .about__content .about__content--img img {
-    max-width: 720px;
-  }
-  main .about .about__content .about__content--quote {
-    margin-top: 48px;
-  }
-  main .about .about__content .about__content--quote p {
-    margin-top: 40px;
-  }
-  main .about .about__content .about__content--title {
+  main .main__hero--show {
+    height: 670px;
+    background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-bottom: 32px;
   }
-  main .about .about__content .about__content--columns {
+  main .main__hero--show--layer {
+    background-color: #323232;
+    opacity: 0.5;
+  }
+  main .main__hero--show h1, main .main__hero--show h3 {
+    color: #ffffff;
+    margin-left: 24px;
+    margin-bottom: 24px;
+  }
+  main .titles {
+    margin-top: 96px;
+    margin-top: 94px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main iframe {
+    margin-top: 64px;
+    margin-left: 24px;
+    width: 50%;
+    height: 20%;
+  }
+  main .shows {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 32px;
+  }
+  main .shows h1 {
+    width: 30%;
+    margin-bottom: 40px;
+  }
+  main .shows .shows-table {
+    width: 100%;
+    border-collapse: separate;
+  }
+  main .shows .shows-table table, main .shows .shows-table thead, main .shows .shows-table tbody, main .shows .shows-table th, main .shows .shows-table td, main .shows .shows-table tr {
+    display: inline-block;
+  }
+  main .shows .shows-table .table-hidden {
+    display: unset;
+  }
+  main .shows .shows-table .hidden {
+    display: none;
+  }
+  main .shows .shows-table .date {
+    font-weight: bold;
+  }
+  main .shows .shows-table .date, main .shows .shows-table .venue, main .shows .shows-table .location {
+    width: 182px;
+  }
+  main .shows .shows-table h5, main .shows .shows-table .theader {
+    color: #AFAFAF;
+    text-transform: uppercase;
+  }
+  main .shows .shows-table .theader {
+    display: block;
+  }
+  main .shows .shows-table .event {
+    border-bottom: 1px solid #AFAFAF;
+    margin-top: 0px;
+    vertical-align: baseline;
+  }
+  main .shows .shows-table .event p {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+  main .shows .shows-table .event .date, main .shows .shows-table .event .venue, main .shows .shows-table .event .location {
+    margin-top: 24px;
+  }
+  main .shows .shows-table .event button {
+    background-color: #323232;
+    color: #ffffff;
+    width: 160px;
+    height: 50px;
+    text-align: center;
+    vertical-align: center;
+    margin-bottom: 16px;
+    margin-top: 32px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  main .shows .comments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  main .shows .comments h1 {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+  main .shows .comments__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -436,41 +558,42 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    margin-bottom: 48px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
   }
-  main .about .about__content .about__content--columns p:first-child {
-    margin-right: 12px;
+  main .shows .comments__form--icon {
+    margin-right: 16px;
   }
-  main .about .about__content .about__content--columns p:last-child {
-    margin-left: 12px;
+  main .shows .comments__form--icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
-  main .gallery__margin {
-    margin-left: 24px;
-    margin-right: 24px;
-    padding-top: 48px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  main .gallery__margin h1 {
-    margin-bottom: 48px;
-  }
-  main .gallery__margin--photos {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-line-pack: space-evenly;
-        align-content: space-evenly;
-    height: 426px;
-  }
-  main .gallery__margin--photos img {
+  main .shows .comments form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 224px;
-    height: 126px;
+  }
+  main .shows .comments form input {
+    border: 1px black solid;
+    height: 50px;
+    margin-bottom: 25px;
+  }
+  main .shows .comments form button {
+    background-color: black;
+    color: white;
+    height: 35px;
+    width: 224px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 32px;
+  }
+  main .shows .comments .comments__published {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   /* Footer styling */
   footer .footer {
@@ -546,72 +669,42 @@ html, body {
   main .main__hero h1 {
     margin-left: 180px;
   }
-  main .about {
-    margin-left: 180px;
-    margin-right: 180px;
-  }
-  main .about .about__content {
-    width: 896px;
+  main .main__hero--show {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  main .about .about__content h2 {
-    text-align: left;
-  }
-  main .about .about__content .about__content--img {
-    width: 896px;
-  }
-  main .about .about__content .about__content--img img {
-    min-width: 896px;
-    height: 450px;
-  }
-  main .about .about__content .about__content--quote {
-    margin-bottom: 56px;
-  }
-  main .about .about__content .about__content--quote h2 {
-    margin-bottom: 40px;
-  }
-  main .about .about__content .about__content--title {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
-  main .about .about__content .about__content--columns p:first-child {
-    margin-right: 20px;
-  }
-  main .about .about__content .about__content--columns p:last-child {
-    margin-left: 20px;
-  }
-  main .gallery {
-    width: 100%;
-    padding-bottom: 0px;
-  }
-  main .gallery__margin {
-    width: 1080px;
+  main .main__hero--show .titles {
+    margin-top: 160px;
     margin-left: 180px;
+  }
+  main .main__hero--show .titles h3 {
+    margin-bottom: 48px;
+  }
+  main .main__hero--show .music {
+    margin-left: 64px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin-right: 180px;
   }
-  main .gallery__margin h1 {
-    margin-bottom: 64px;
+  main .main__hero--show .music iframe {
+    width: 436px;
+    height: 146px;
   }
-  main .gallery__margin--photos {
-    height: 627px;
-    margin-top: 0px;
-    margin-bottom: 40px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  main .gallery__margin--photos img {
-    width: 344px;
-    height: 193px;
+  main .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: 180px;
   }
   footer .footer {
     width: 100%;
