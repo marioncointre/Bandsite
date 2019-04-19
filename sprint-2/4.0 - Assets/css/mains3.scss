@@ -203,6 +203,8 @@ html, body {
                         border: 1px black solid;
                         height: 50px;
                         margin-bottom: 25px;
+                        border-radius: 10%;
+
                     }
 
                     button {
@@ -212,8 +214,9 @@ html, body {
                         width: 224px;
                         align-self: flex-end;
                         margin-bottom: 32px;
-
                     }
+
+                    
             }
 
             .comments__published {
@@ -367,7 +370,6 @@ html, body {
 
             .shows-table {
                 width: 100%; 
-                border-collapse: separate; 
                 
                 table, thead, tbody, th, td, tr { 
                     display: inline-block; 
@@ -387,7 +389,6 @@ html, body {
 
                 .date, .venue, .location {
                     width: 182px;
-                    // margin-right: 10px;
                 }
                 h5, .theader {
                     color: $silver-color;
@@ -396,7 +397,6 @@ html, body {
                 .theader {
                     display: block;
                 }
-
 
             .event {
                 border-bottom: 1px solid $silver-color;
