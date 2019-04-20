@@ -28,7 +28,17 @@
 //     commentInput: document.getElementById('Comment')
 // }
 
-// document.getElementById("#Btn").addEventListener("click", displayComment);
+
+document.querySelector('.comments__published').innerText = "test"
+
+
+
+
+
+
+
+
+
 
 
 var button = document.querySelector('#Btn')

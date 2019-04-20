@@ -1,24 +1,28 @@
 
+// Declaring an array of objects to get comments
+
 var commentsTable = [
     {
-        nameIcon: 'src',
-        commentDate:'12/18/2018',
-        userName:'Micheal Lyons',
-        commentInput:'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
+        nameIcon: '',
+        commentDate: '',
+        userName:'test',
+        commentInput:'test'
     },
     {
-        nameIcon: 'src',
-        commentDate:'12/18/2018',
-        userName:'Gary Wong',
-        commentInput:'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
+        nameIcon: '',
+        commentDate:'',
+        userName: '',
+        commentInput:''
     },
     {
-        nameIcon: 'src',
-        commentDate:'11/15/2018',
-        userName:'Theodore Duncan',
-        commentInput:'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!'
+        nameIcon: '',
+        commentDate:'',
+        userName:'',
+        commentInput:''
     }
 ];
+
+    var commentsPublished = "";
 
 // Add new information to a new comment 
 var newComment= {
@@ -27,35 +31,46 @@ var newComment= {
     userName: '',
     commentInput: ''
 }
+var newCommentName = '';
+var newCommentInput ='';
 
 // Add new information to a new comment Object
-
 function createComment (){
-    var newCommentName = document.getElementById("Name").value;
+    newCommentName = document.getElementById("Name").value;
     newComment.userName = newCommentName;
-    var newCommentInput = document.getElementById('Comment').value;
+    newCommentInput = document.getElementById("Comment").value;
     newComment.commentInput = newCommentInput;
-    return newComment;
 }
 
 // adding comment object to array
 function addComment(){
-    commentsTable.unshift(createComment());
+    commentsTable.unshift(newComment);
 }
 
 var button = document.querySelector('#Btn')
+
+// Displaying array in div
+function test() {
+    for (var i = 0; i < commentsTable.length; i++) {
+        commentsPublished+="<div class='comments__published--name'>"+commentsTable[i].name+"</div>";
+        commentsPublished+="<td>"+commentsTable[i].age+"</td>";
+        commentsPublished+="<div class='comments__published--comment'>"+commentsTable[i].email+"</div>";
+    }
+ document.getElementById("comments__published").innerHTML = commentsPublished;
+    }
 button.onclick = function(event) {
 	// prevent the webpage from reloading
     event.preventDefault();
+    //create a comment if field is not empty
     createComment();
+    //add comment to the array=
     addComment();
-    alert(commentsTable);
-    document.querySelector('.comments__published').innerText = commentsTable;
-
+    test();
+    commentsTable.push(newComment);
+    //display array of comment to body:
+        event.preventDefault();
+        JSON.stringify(commentsTable)
 }
-
-
-
 
 
 

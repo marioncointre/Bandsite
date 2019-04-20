@@ -189,14 +189,31 @@ html, body {
                 &__form {
                     @include row;
                     &--icon {
+
                         margin-right: 16px;
 
                         img {
-                            width: 40px;
-                            height: 40px;
+                            width: 48px;
+                            height: 48px;
                             border-radius: 50%;
+                            margin-top: 25px;
                         }    
                     }
+
+                    #myForm{
+
+                        .formName{ 
+                            display: flex;
+                            flex-direction: column;
+                        }
+    
+                        .formComment{
+                            display: flex;
+                            flex-direction: column;
+    
+                        }
+    
+                        }
                 }
 
                 form {
@@ -204,25 +221,92 @@ html, body {
                     width: 224px;
 
                     input {
-                        border: 1px black solid;
+                        border: 2px $black-color solid;
                         height: 50px;
                         margin-bottom: 25px;
+                        background-color: $lightgrey;
+                        border-radius: 4px;
+                    }
+
+                    textarea {
+                        border: 2px $mercury-color solid;
+                        margin-bottom: 24px;
+                        background-color: $lightgrey;
+                        border-radius: 6px;
                     }
 
                     button {
-                        background-color: black;
+                        background-color: $black-color;
                         color: white;
-                        height: 35px;
+                        height: 48px;
                         width: 224px;
                         align-self: flex-end;
                         margin-bottom: 32px;
+                        border-radius: 4px;
+                        font-family: "Avenir Next";
+                        text-transform: uppercase;
+                        font-weight: $font-demibold;
 
+                        &:hover {
+                            background-color: black;
+
+                        }
                     }
             }
+            
+            .comments-table {
 
-            .comments__published {
+                .comments__published {
+                @include row;
                 padding-top: 24px;
                 padding-bottom: 24px;
+                border-bottom: 1px solid $mercury-color;
+                width: 100%;
+
+                .comments__img {
+                    @include column;
+                    width: 20%;
+                }
+
+                .comments__body {
+                    @include row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    width: 80%;
+
+
+                    .comments-username, .comments-date {
+                        flex:1 1 50%; 
+                    }
+                    .comments-date {
+                        text-align: right;
+                        color: $mercury-color;
+                    }
+                    .comments-username {
+                        font-weight: $font-bold;
+                    }
+
+
+                    .comments-comment {
+                        margin-top: 16px;
+                        flex:1 1 100%;
+                    }
+
+                }
+
+                }
+            }
+
+                &--icon {
+                    display: flex;
+                    flex-direction: column;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: $lightgrey;
+
+
+                }
             }
         }
     }
@@ -290,7 +374,7 @@ html, body {
         }
     }
     }
-}
+
 
   /* styling for tablet from 768px */
     @media (min-width: 768px) {
@@ -395,7 +479,57 @@ html, body {
              }
          }   
         }
+
+        .comments { // Comments section
+            margin-left: 24px;
+            margin-right: 24px;
+
+
+                h1 {
+                    align-self: flex-start;
+                }
+
+                &__form {
+                    width: 528px;
+                    border-bottom: 1px solid $mercury-color;
+
+                    &--icon {
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            margin-top: 25px;
+                        }    
+                    }
+                }
+
+                form {
+                    width: 528px;
+
+
+                    button {
+                        width: 160px;
+
+                    }
+            }
+            
+            .comments-table {
+                width: 528px;
+                margin-bottom: 40px;
+
+                .comments__published {
+                width: 100%;
+
+                }
+
+                }
+            }
+
+        }
     }
+
+
+
 /* Footer styling */
         footer {
     
@@ -437,7 +571,6 @@ html, body {
             }
         }        
     }
-}
 
   /* styling for desktop from 1440px */
     @media (min-width: 1440px){
@@ -535,10 +668,31 @@ html, body {
             }
             }   
         }
+
+        .comments { // Comments section
+            margin-left: 180px;
+            margin-right: 180px;
+
+                &__form {
+
+                    &--icon {
+
+                        img {
+                            width: 48px;
+                            height: 48px;
+                            margin-top: 25px;
+                        }    
+                    }
+                }
+
+                #myForm{
+                    width: 460px;
+                }
+
+        }
     }
     
     footer {
-
         .footer {
             width: 100%;
     
@@ -561,4 +715,5 @@ html, body {
             }
         }
     }
+
 }

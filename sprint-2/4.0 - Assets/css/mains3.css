@@ -41,7 +41,7 @@ a {
     font-size: 16px;
     line-height: 24px;
   }
-  h4, p {
+  h4, p, label {
     font-size: 14px;
     line-height: 22px;
   }
@@ -65,13 +65,18 @@ a {
     font-size: 14px;
     line-height: 22px;
   }
-  h4, p, ul, ol {
+  h4, p, ul, ol, label {
     font-size: 13px;
     line-height: 18px;
   }
   h5 {
     font-size: 12px;
     line-height: 20px;
+  }
+  label {
+    color: #AFAFAF;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 
@@ -174,13 +179,13 @@ html, body {
     background-color: #323232;
     opacity: 0.5;
   }
-  main .main__hero--show h1, main .main__hero--show h3 {
+  main .main__hero--show h1, main .main__hero--show h2 {
     color: #ffffff;
-    margin-left: 16px;
     margin-bottom: 16px;
   }
   main .titles {
     margin-top: 64px;
+    margin-left: 16px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -227,7 +232,7 @@ html, body {
     font-weight: bold;
   }
   main .shows .shows-table .event {
-    border-bottom: 1px solid #AFAFAF;
+    border-bottom: 1px solid #E1E1E1;
     margin-top: 32px;
   }
   main .shows .shows-table .event h5 {
@@ -288,6 +293,24 @@ html, body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+  }
+  main .shows .comments__form #myForm .formName {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .shows .comments__form #myForm .formComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   main .shows .comments form {
     display: -webkit-box;
@@ -452,14 +475,14 @@ html, body {
     background-color: #323232;
     opacity: 0.5;
   }
-  main .main__hero--show h1, main .main__hero--show h3 {
+  main .main__hero--show h1, main .main__hero--show h2 {
     color: #ffffff;
-    margin-left: 24px;
     margin-bottom: 24px;
   }
   main .titles {
+    width: 80%;
     margin-top: 96px;
-    margin-top: 94px;
+    margin-left: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -682,10 +705,11 @@ html, body {
     margin-top: 160px;
     margin-left: 180px;
   }
-  main .main__hero--show .titles h3 {
+  main .main__hero--show .titles h2 {
     margin-bottom: 48px;
   }
   main .main__hero--show .music {
+    margin-top: 0;
     margin-left: 64px;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;

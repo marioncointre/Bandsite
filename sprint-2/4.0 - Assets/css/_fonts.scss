@@ -50,7 +50,7 @@ h3 {
     line-height: 24px;
 }
 
-h4, p {
+h4, p, label {
     font-size: 14px;
     line-height: 22px;
 }
@@ -79,7 +79,7 @@ h2 {
     line-height: 22px;
 }
 
-h4, p, ul, ol {
+h4, p, ul, ol, label {
     font-size: 13px;
     line-height: 18px;
 }
@@ -87,5 +87,11 @@ h4, p, ul, ol {
 h5 {
     font-size: 12px;
     line-height: 20px;
+}
+
+label {
+    color: $silver-color;
+    text-transform: uppercase;
+    font-weight: $font-demibold;
 }
 }

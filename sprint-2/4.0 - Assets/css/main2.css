@@ -41,7 +41,7 @@ a {
     font-size: 16px;
     line-height: 24px;
   }
-  h4, p {
+  h4, p, label {
     font-size: 14px;
     line-height: 22px;
   }
@@ -65,13 +65,18 @@ a {
     font-size: 14px;
     line-height: 22px;
   }
-  h4, p, ul, ol {
+  h4, p, ul, ol, label {
     font-size: 13px;
     line-height: 18px;
   }
   h5 {
     font-size: 12px;
     line-height: 20px;
+  }
+  label {
+    color: #AFAFAF;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 
@@ -311,9 +316,28 @@ html, body {
     margin-right: 16px;
   }
   main .comments__form--icon img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    margin-top: 25px;
+  }
+  main .comments__form #myForm .formName {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .comments__form #myForm .formComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   main .comments form {
     display: -webkit-box;
@@ -326,26 +350,35 @@ html, body {
     width: 224px;
   }
   main .comments form input {
-    border: 1px black solid;
+    border: 2px #323232 solid;
     height: 50px;
     margin-bottom: 25px;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+  }
+  main .comments form textarea {
+    border: 2px #E1E1E1 solid;
+    margin-bottom: 24px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
   }
   main .comments form button {
-    background-color: black;
+    background-color: #323232;
     color: white;
-    height: 35px;
+    height: 48px;
     width: 224px;
     -ms-flex-item-align: end;
         align-self: flex-end;
     margin-bottom: 32px;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-weight: 500;
   }
-  main .comments .comments__published {
-    padding-top: 24px;
-    padding-bottom: 24px;
+  main .comments form button:hover {
+    background-color: black;
   }
-  /* Footer styling */
-  footer {
-    background-color: #323232;
+  main .comments .comments-table .comments__published {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -353,17 +386,12 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  footer .footer__contact {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
     width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 40px;
+  }
+  main .comments .comments-table .comments__published .comments__img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -371,11 +399,42 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-    color: #ffffff;
+    width: 20%;
   }
-  footer .footer__contact--title {
+  main .comments .comments-table .comments__published .comments__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80%;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-username, main .comments .comments-table .comments__published .comments__body .comments-date {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-date {
+    text-align: right;
+    color: #E1E1E1;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-username {
+    font-weight: bold;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-comment {
+    margin-top: 16px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  main .comments--icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -383,51 +442,107 @@ html, body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
   }
-  footer .footer__contact--title h1 {
-    padding-bottom: 1em;
-  }
-  footer .footer__contact--title .footer__contact--img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-bottom: 40px;
-  }
-  footer .footer__contact--title .footer__contact--img .footer__contact--icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 40%;
-  }
-  footer .footer__contact--title .footer__contact--img .footer__logo {
-    display: none;
-  }
-  footer .footer__columns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  footer .footer__columns--agency, footer .footer__columns--address, footer .footer__columns--email {
-    padding-bottom: 10px;
-  }
-  footer .footer__columns--agency {
-    font-weight: 500;
-  }
-  footer .footer__copyright {
-    font-weight: 100;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+}
+
+/* Footer styling */
+footer {
+  background-color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer__contact {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  color: #ffffff;
+}
+
+footer .footer__contact--title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footer__contact--title h1 {
+  padding-bottom: 1em;
+}
+
+footer .footer__contact--title .footer__contact--img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+footer .footer__contact--title .footer__contact--img .footer__contact--icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+}
+
+footer .footer__contact--title .footer__contact--img .footer__logo {
+  display: none;
+}
+
+footer .footer__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footer__columns--agency, footer .footer__columns--address, footer .footer__columns--email {
+  padding-bottom: 10px;
+}
+
+footer .footer__columns--agency {
+  font-weight: 500;
+}
+
+footer .footer__copyright {
+  font-weight: 100;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 /* styling for tablet from 768px */
@@ -527,58 +642,96 @@ html, body {
     width: 224px;
     height: 126px;
   }
-  /* Footer styling */
-  footer .footer {
-    width: 100%;
-  }
-  footer .footer__contact {
-    width: 720px;
+  main .comments {
     margin-left: 24px;
     margin-right: 24px;
   }
-  footer .footer__contact--title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  main .comments h1 {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
-  footer .footer__contact--title h1 {
-    padding-bottom: 40px;
+  main .comments__form {
+    width: 528px;
+    border-bottom: 1px solid #E1E1E1;
   }
-  footer .footer__contact--title .footer__contact--img {
-    width: 66%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  main .comments__form--icon img {
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
   }
-  footer .footer__contact--title .footer__contact--img .footer__contact--icons {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    width: 35%;
+  main .comments form {
+    width: 528px;
   }
-  footer .footer__contact--title .footer__contact--img .footer__logo {
-    display: unset;
-    justify-self: flex-start;
+  main .comments form button {
+    width: 160px;
   }
-  footer .footer__columns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  main .comments .comments-table {
+    width: 528px;
+    margin-bottom: 40px;
   }
+  main .comments .comments-table .comments__published {
+    width: 100%;
+  }
+}
+
+/* Footer styling */
+footer .footer {
+  width: 100%;
+}
+
+footer .footer__contact {
+  width: 720px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+footer .footer__contact--title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer__contact--title h1 {
+  padding-bottom: 40px;
+}
+
+footer .footer__contact--title .footer__contact--img {
+  width: 66%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__contact--title .footer__contact--img .footer__contact--icons {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 35%;
+}
+
+footer .footer__contact--title .footer__contact--img .footer__logo {
+  display: unset;
+  justify-self: flex-start;
+}
+
+footer .footer__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /* styling for desktop from 1440px */
@@ -667,6 +820,18 @@ html, body {
   main .gallery__margin--photos img {
     width: 344px;
     height: 193px;
+  }
+  main .comments {
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  main .comments__form--icon img {
+    width: 48px;
+    height: 48px;
+    margin-top: 25px;
+  }
+  main .comments #myForm {
+    width: 460px;
   }
   footer .footer {
     width: 100%;
