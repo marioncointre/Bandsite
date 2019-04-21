@@ -1,0 +1,18 @@
+@import 'colors';
+@import 'fonts';
+@import 'mixens';
+@import 'header';
+@import 'footer';
+@import 'comments';
+@import 'shows';
+
+/* Resetting  user agent styling */
+html, body, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+html, body {
+    color: #323232;
+    font-family: 'Avenir Next';
+  }

@@ -1,0 +1,147 @@
+  /* Default CSS styling for mobile 320px */
+  @media (min-width: 320px){
+    
+    /* Main content styling */
+
+    main {
+        width: 100vw;
+
+        .comments { // Comments section
+            @include column;
+            align-items: center;
+            margin-left: 16px;
+            margin-right: 16px;
+
+                h1 {
+                    padding-top: 32px;
+                    padding-bottom : 40px;
+                }
+
+                &__form {
+                    @include row;
+                    &--icon {
+                        margin-right: 16px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }    
+                    }
+
+                    #myForm{
+
+                        .formName{ 
+                            display: flex;
+                            flex-direction: column;
+                        }
+    
+                        .formComment{
+                            display: flex;
+                            flex-direction: column;
+    
+                        }
+    
+                        }
+                }
+
+                form {
+                    @include column;
+                    width: 224px;
+
+                    input {
+                        border: 1px black solid;
+                        height: 50px;
+                        margin-bottom: 25px;
+                        border-radius: 10%;
+
+                    }
+
+                    button {
+                        background-color: black;
+                        color: white;
+                        height: 35px;
+                        width: 224px;
+                        align-self: flex-end;
+                        margin-bottom: 32px;
+                    }
+
+
+
+                    
+            }
+
+            .comments__published {
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+        }
+    }
+}
+
+
+  /* styling for tablet from 768px */
+  @media (min-width: 768px) { 
+    
+    /* Main content styling */
+ 
+    main {
+
+        .comments { // Comments section
+            @include column;
+            align-items: center;
+            margin-left: 16px;
+            margin-right: 16px;
+
+                h1 {
+                    padding-top: 32px;
+                    padding-bottom : 40px;
+                }
+
+                &__form {
+                    @include row;
+                    &--icon {
+                        margin-right: 16px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }    
+                    }
+                }
+
+                form {
+                    @include column;
+                    width: 224px;
+
+                    input {
+                        border: 1px black solid;
+                        height: 50px;
+                        margin-bottom: 25px;
+                    }
+
+                    button {
+                        background-color: black;
+                        color: white;
+                        height: 35px;
+                        width: 224px;
+                        align-self: flex-end;
+                        margin-bottom: 32px;
+
+                    }
+
+            }
+
+            .comments__published {
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+        }
+    }
+}
+
+  /* styling for desktop from 1440px */
+//   @media (min-width: 1440px){
+    
+//     }
