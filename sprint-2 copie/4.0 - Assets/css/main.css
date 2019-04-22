@@ -391,8 +391,8 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   main .comments h1 {
     padding-top: 32px;
@@ -408,12 +408,13 @@ a {
             flex-direction: row;
   }
   main .comments__form--icon {
-    margin-right: 16px;
+    margin-right: 5%;
   }
   main .comments__form--icon img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    margin-top: 25px;
   }
   main .comments__form #myForm .formName {
     display: -webkit-box;
@@ -444,23 +445,87 @@ a {
     width: 224px;
   }
   main .comments form input {
-    border: 1px black solid;
+    border: 2px #323232 solid;
     height: 50px;
     margin-bottom: 25px;
-    border-radius: 10%;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+  }
+  main .comments form textarea {
+    border: 2px #E1E1E1 solid;
+    margin-bottom: 24px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
   }
   main .comments form button {
-    background-color: black;
+    background-color: #323232;
     color: white;
-    height: 35px;
+    height: 48px;
     width: 224px;
     -ms-flex-item-align: end;
         align-self: flex-end;
     margin-bottom: 32px;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-weight: 500;
   }
-  main .comments .comments__published {
+  main .comments form button:hover {
+    background-color: black;
+  }
+  main .comments .comments-table .comments__published {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     padding-top: 24px;
     padding-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+    width: 100%;
+  }
+  main .comments .comments-table .comments__published .comments__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 20%;
+  }
+  main .comments .comments-table .comments__published .username, main .comments .comments-table .comments__published .date {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  main .comments .comments-table .comments__published .date {
+    text-align: right;
+    color: #E1E1E1;
+  }
+  main .comments .comments-table .comments__published .username {
+    font-weight: bold;
+  }
+  main .comments .comments-table .comments__published .input {
+    margin-top: 5%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  main--icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
   }
 }
 
@@ -530,9 +595,27 @@ a {
     padding-top: 24px;
     padding-bottom: 24px;
   }
+  main .comments .comments-username {
+    font-weight: bold;
+  }
 }
 
 /* styling for desktop from 1440px */
+@media (min-width: 1440px) {
+  .comments {
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  .comments__form--icon img {
+    width: 48px;
+    height: 48px;
+    margin-top: 25px;
+  }
+  .comments #myForm {
+    width: 460px;
+  }
+}
+
 /* Default CSS styling for mobile 320px */
 @media (min-width: 320px) {
   /* Main content styling */
@@ -941,7 +1024,7 @@ a {
 }
 
 /* Resetting  user agent styling */
-html, body, ul {
+html, body, ul, button {
   margin: 0;
   padding: 0;
 }
@@ -949,5 +1032,464 @@ html, body, ul {
 html, body {
   color: #323232;
   font-family: 'Avenir Next';
+}
+
+/* Default CSS styling for mobile 320px */
+@media (min-width: 320px) {
+  /* Main content styling */
+  main {
+    width: 100%;
+  }
+  main .main__hero {
+    height: 183px;
+    background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 32px;
+  }
+  main .main__hero--layer {
+    background-color: #323232;
+    opacity: 0.5;
+  }
+  main .main__hero h1 {
+    color: #ffffff;
+    margin-left: 5%;
+  }
+  main .about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  main .about h1 {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-bottom: 24px;
+    text-transform: capitalize;
+  }
+  main .about .about__content {
+    margin-bottom: 40px;
+  }
+  main .about .about__content > h2 {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  main .about .about__content .about__content--img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 24px;
+  }
+  main .about .about__content .about__content--img img {
+    max-width: 288px;
+  }
+  main .about .about__content .about__content--quote {
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  main .about .about__content .about__content--quote h2 {
+    margin-bottom: 32px;
+  }
+  main .about .about__content .about__content--title {
+    text-align: left;
+  }
+  main .about .about__content .about__content--columns {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .about .about__content .about__content--columns p:first-child {
+    margin-bottom: 24px;
+  }
+  main .gallery {
+    background-color: #FAFAFA;
+    padding-bottom: 24px;
+  }
+  main .gallery__margin {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 2em;
+  }
+  main .gallery__margin--photos {
+    margin-top: 24px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  main .gallery__margin--photos img {
+    width: 288px;
+    margin-bottom: 1em;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  main .gallery__margin--photos img:hover {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  main .comments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  main .comments h1 {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+  main .comments__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main .comments__form--icon {
+    margin-right: 5%;
+  }
+  main .comments__form--icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-top: 25px;
+  }
+  main .comments__form #myForm .formName {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .comments__form #myForm .formComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .comments form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 224px;
+  }
+  main .comments form input {
+    border: 2px #323232 solid;
+    height: 50px;
+    margin-bottom: 25px;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+  }
+  main .comments form textarea {
+    border: 2px #E1E1E1 solid;
+    margin-bottom: 24px;
+    background-color: #FAFAFA;
+    border-radius: 6px;
+  }
+  main .comments form button {
+    background-color: #323232;
+    color: white;
+    height: 48px;
+    width: 224px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 32px;
+    border-radius: 4px;
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  main .comments form button:hover {
+    background-color: black;
+  }
+  main .comments .comments-table .comments__published {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+    width: 100%;
+  }
+  main .comments .comments-table .comments__published .comments__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 20%;
+  }
+  main .comments .comments-table .comments__published .comments__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80%;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-username, main .comments .comments-table .comments__published .comments__body .comments-date {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-date {
+    text-align: right;
+    color: #E1E1E1;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-username {
+    font-weight: bold;
+  }
+  main .comments .comments-table .comments__published .comments__body .comments-comment {
+    margin-top: 5%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  main .comments--icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Main content styling */
+  main .main__hero {
+    height: 400px;
+    margin-bottom: 48px;
+  }
+  main .main__hero h1 {
+    margin-left: 24px;
+  }
+  main .about {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  main .about .about__content {
+    width: 720px;
+  }
+  main .about .about__content .about__content--img img {
+    max-width: 720px;
+  }
+  main .about .about__content .about__content--quote {
+    margin-top: 48px;
+  }
+  main .about .about__content .about__content--quote p {
+    margin-top: 40px;
+  }
+  main .about .about__content .about__content--title {
+    margin-bottom: 32px;
+  }
+  main .about .about__content .about__content--columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 48px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  main .about .about__content .about__content--columns p:first-child {
+    margin-right: 12px;
+  }
+  main .about .about__content .about__content--columns p:last-child {
+    margin-left: 12px;
+  }
+  main .gallery__margin {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding-top: 48px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .gallery__margin h1 {
+    margin-bottom: 48px;
+  }
+  main .gallery__margin--photos {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: space-evenly;
+        align-content: space-evenly;
+    height: 426px;
+  }
+  main .gallery__margin--photos img {
+    width: 224px;
+    height: 126px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .menu ul {
+    width: 40%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .menu ul li:first-child {
+    margin-left: 180px;
+  }
+  .menu ul li:nth-child(2), .menu ul li:last-child {
+    margin-right: 56px;
+  }
+  main .main__hero {
+    height: 670px;
+  }
+  main .main__hero h1 {
+    margin-left: 180px;
+  }
+  main .about {
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  main .about .about__content {
+    width: 896px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .about .about__content h2 {
+    text-align: left;
+  }
+  main .about .about__content .about__content--img {
+    width: 896px;
+  }
+  main .about .about__content .about__content--img img {
+    min-width: 896px;
+    height: 450px;
+  }
+  main .about .about__content .about__content--quote {
+    margin-bottom: 56px;
+  }
+  main .about .about__content .about__content--quote h2 {
+    margin-bottom: 40px;
+  }
+  main .about .about__content .about__content--title {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  main .about .about__content .about__content--columns p:first-child {
+    margin-right: 20px;
+  }
+  main .about .about__content .about__content--columns p:last-child {
+    margin-left: 20px;
+  }
+  main .gallery {
+    width: 100%;
+    padding-bottom: 0px;
+  }
+  main .gallery__margin {
+    width: 1080px;
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  main .gallery__margin h1 {
+    margin-bottom: 64px;
+  }
+  main .gallery__margin--photos {
+    height: 627px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .gallery__margin--photos img {
+    width: 344px;
+    height: 193px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -56,3 +56,11 @@ var commentsTable = [
 
  
    }
+
+//    var newElement = document.createElement('div')
+//  newElement.innerText = someTextInput.value + '(' + month + ')'
+//  newElement.classList.add('item')
+//  content.appendChild(newElement)
+
+//  someTextInput.value = ''
+// }

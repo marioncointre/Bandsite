@@ -9,8 +9,8 @@
         .comments { // Comments section
             @include column;
             align-items: center;
-            margin-left: 16px;
-            margin-right: 16px;
+            margin-left: 5%;
+            margin-right: 5%;
 
                 h1 {
                     padding-top: 32px;
@@ -20,12 +20,14 @@
                 &__form {
                     @include row;
                     &--icon {
-                        margin-right: 16px;
+
+                        margin-right: 5%;
 
                         img {
-                            width: 40px;
-                            height: 40px;
+                            width: 48px;
+                            height: 48px;
                             border-radius: 50%;
+                            margin-top: 25px;
                         }    
                     }
 
@@ -50,34 +52,94 @@
                     width: 224px;
 
                     input {
-                        border: 1px black solid;
+                        border: 2px $black-color solid;
                         height: 50px;
                         margin-bottom: 25px;
-                        border-radius: 10%;
+                        background-color: $lightgrey;
+                        border-radius: 4px;
+                    }
 
+                    textarea {
+                        border: 2px $mercury-color solid;
+                        margin-bottom: 24px;
+                        background-color: $lightgrey;
+                        border-radius: 6px;
                     }
 
                     button {
-                        background-color: black;
+                        background-color: $black-color;
                         color: white;
-                        height: 35px;
+                        height: 48px;
                         width: 224px;
                         align-self: flex-end;
                         margin-bottom: 32px;
+                        border-radius: 4px;
+                        font-family: "Avenir Next";
+                        text-transform: uppercase;
+                        font-weight: $font-demibold;
+
+                        &:hover {
+                            background-color: black;
+
+                        }
                     }
-
-
-
-                    
             }
+            
+            .comments-table {
 
-            .comments__published {
+                .comments__published {
+                @include row;
                 padding-top: 24px;
                 padding-bottom: 24px;
+                border-bottom: 1px solid $mercury-color;
+                width: 100%;
+
+                .comments__img {
+                    @include column;
+                    width: 20%;
+                }
+
+                // .comments__body {
+                //     @include row;
+                //     align-items: center;
+                //     flex-wrap: wrap;
+                //     width: 80%;
+
+
+                    .username, .date {
+                        flex:1 1 50%; 
+                    }
+                    .date {
+                        text-align: right;
+                        color: $mercury-color;
+                    }
+                    .username {
+                        font-weight: $font-bold;
+                    }
+
+                    .input {
+                        margin-top: 5%;
+                        flex:1 1 100%;
+                    }
+
+                }
+
+                }
             }
-        }
+
+                &--icon {
+                    display: flex;
+                    flex-direction: column;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: $lightgrey;
+
+
+                }
+            }
+
     }
-}
 
 
   /* styling for tablet from 768px */
@@ -132,16 +194,39 @@
                     }
 
             }
-
             .comments__published {
                 padding-top: 24px;
                 padding-bottom: 24px;
+            }
+
+            .comments-username {
+                font-weight: $font-bold;
             }
         }
     }
 }
 
   /* styling for desktop from 1440px */
-//   @media (min-width: 1440px){
-    
-//     }
+  @media (min-width: 1440px){
+    .comments { // Comments section
+        margin-left: 180px;
+        margin-right: 180px;
+
+            &__form {
+
+                &--icon {
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        margin-top: 25px;
+                    }    
+                }
+            }
+
+            #myForm{
+                width: 460px;
+            }
+
+    } 
+}

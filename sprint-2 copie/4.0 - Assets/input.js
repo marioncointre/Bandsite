@@ -24,8 +24,21 @@ var commentsTable = [
 
     var commentsPublished = "";
 
-    window.onload = function displayComments() {
-    document.querySelector('.comments__published').innerHTML = JSON.stringify(commentsTable);
+    // window.onload = 
+    
+    function displayComments() {
+        for (var i= 0; i< commentsTable.length; i++) {
+            let newComment = document.createElement('div');
+            
+            formElement.appendChild(nameElement)
+            nameElement.classList.add('comments__inline');
+            nameElement.innerText = arr[i].name;
+            divElement.appendChild(formElement);
+            outPutComment.appendChild(divElement);
+
+
+        }
+
     }
 
 
@@ -66,7 +79,7 @@ function submitComment(event) {
     //add comment to the array=
     addComment();
     //display array of comment to body:
-        JSON.stringify(commentsTable)
+     displayComments ();
 }
 
 document.getElementById("Btn").addEventListener('click', submitComment);
