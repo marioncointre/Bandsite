@@ -82,15 +82,9 @@
                     color: $silver-color;
                     text-transform: uppercase;
                     font-weight: $font-demibold;
-                }
+                    margin-top: 24px;
+                    margin-bottom: 16px;
 
-                p {
-                    margin-top: 16px;
-                    margin-bottom: 24px;
-                }
-
-                .date, .venue, .location {
-                    margin-top:24px;
                 }
 
                 button {
@@ -112,77 +106,6 @@
                 margin-top: 0;
             }
         }
-
-        .comments { // Comments section
-            @include column;
-            align-items: center;
-            margin-left: 16px;
-            margin-right: 16px;
-
-                h1 {
-                    padding-top: 32px;
-                    padding-bottom : 40px;
-                }
-
-                &__form {
-                    @include row;
-                    &--icon {
-                        margin-right: 16px;
-
-                        img {
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                        }    
-                    }
-
-                    #myForm{
-
-                        .formName{ 
-                            display: flex;
-                            flex-direction: column;
-                        }
-    
-                        .formComment{
-                            display: flex;
-                            flex-direction: column;
-    
-                        }
-    
-                        }
-                }
-
-                form {
-                    @include column;
-                    width: 224px;
-
-                    input {
-                        border: 1px black solid;
-                        height: 50px;
-                        margin-bottom: 25px;
-                        border-radius: 10%;
-
-                    }
-
-                    button {
-                        background-color: black;
-                        color: white;
-                        height: 35px;
-                        width: 224px;
-                        align-self: flex-end;
-                        margin-bottom: 32px;
-                    }
-
-
-
-                    
-            }
-
-            .comments__published {
-                padding-top: 24px;
-                padding-bottom: 24px;
-            }
-        }
     }
     }
 }
@@ -198,14 +121,8 @@
         .main__hero--show { // Hero section
             height: 670px;
             margin-bottom: 32px;
-
-            &--layer { // image opacity
-                background-color: #323232;
-                opacity: 0.5;
-            }
     
             h1, h2 {
-                color: $primary-color;
                 margin-bottom: 24px;
             }
         }
@@ -214,13 +131,9 @@
             width: 80%;
             margin-top: 96px;
             margin-left: 24px;
-            margin-right: 24px;
-
-            @include column;
-        }
+            margin-right: 24px;        }
 
         iframe {
-            // margin-top: 64px;
             margin-left: 24px;
             width: 50%;
             height: 20%;
@@ -229,15 +142,12 @@
         .shows {
             margin-left: 24px;
             margin-right: 24px;
-            margin-bottom: 32px;
 
             h1 {
                 width: 30%;
-                margin-bottom: 40px;
             }
 
             .shows-table {
-                width: 100%; 
                 
                 table, thead, tbody, th, td, tr { 
                     display: inline-block; 
@@ -267,7 +177,6 @@
                 }
 
             .event {
-                border-bottom: 1px solid $silver-color;
                 margin-top: 0px;
                 vertical-align: baseline;
 
@@ -285,70 +194,9 @@
                 }
 
                 button {
-                    background-color: $black-color;
-                    color: $primary-color;
                     width: 160px;
-                    height: 50px;
-                    text-align: center;
-                    vertical-align: center;
-                    margin-bottom:16px;
-                    margin-top: 32px;
-                    text-transform: uppercase;
-                    font-weight: $font-demibold;
                     font-size: 12px;
                 }
-            }
-        }
-
-        .comments { // Comments section
-            @include column;
-            align-items: center;
-            margin-left: 16px;
-            margin-right: 16px;
-
-                h1 {
-                    padding-top: 32px;
-                    padding-bottom : 40px;
-                }
-
-                &__form {
-                    @include row;
-                    &--icon {
-                        margin-right: 16px;
-
-                        img {
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                        }    
-                    }
-                }
-
-                form {
-                    @include column;
-                    width: 224px;
-
-                    input {
-                        border: 1px black solid;
-                        height: 50px;
-                        margin-bottom: 25px;
-                    }
-
-                    button {
-                        background-color: black;
-                        color: white;
-                        height: 35px;
-                        width: 224px;
-                        align-self: flex-end;
-                        margin-bottom: 32px;
-
-                    }
-
-            }
-
-            .comments__published {
-                padding-top: 24px;
-                padding-bottom: 24px;
             }
         }
     }
@@ -359,15 +207,10 @@
   @media (min-width: 1440px){
     
     main {
-        .main__hero {
-            height: 670px;
-                h1 {
-                margin-left: 180px;
-            }
-        }
         
             .main__hero--show { 
                 @include row;
+                margin-bottom: 48px;
 
                 .titles {
                     margin-top: 160px;
@@ -397,6 +240,18 @@
             .shows {
                 @include row;
                 margin-left: 180px;
+                margin-right: 180px;
+
+            
+                .shows-table{
+
+                    .event {
+
+                        button {
+                            margin-top: 40px;
+                        }
+                    }
+                }
             }
             
         }

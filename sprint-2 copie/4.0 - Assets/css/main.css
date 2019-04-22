@@ -43,7 +43,7 @@ a {
     line-height: 24px;
     color: #323232;
   }
-  h4, p, label {
+  h4, p {
     font-size: 14px;
     line-height: 22px;
     color: #323232;
@@ -59,6 +59,15 @@ a {
     font-weight: 400;
     color: #323232;
   }
+  label {
+    font-size: 12px;
+    line-height: 20px;
+    color: #AFAFAF;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #E1E1E1;
+    padding-bottom: 8px;
+  }
 }
 
 /* Mobile rules */
@@ -73,7 +82,7 @@ a {
     line-height: 22px;
     color: #323232;
   }
-  h4, p, ul, ol, label {
+  h4, p, ul, ol {
     font-size: 13px;
     line-height: 18px;
     color: #323232;
@@ -90,7 +99,8 @@ a {
     color: #AFAFAF;
     text-transform: uppercase;
     font-weight: 500;
-    color: #323232;
+    color: #E1E1E1;
+    padding-bottom: 8px;
   }
 }
 
@@ -377,9 +387,6 @@ a {
 /* Default CSS styling for mobile 320px */
 @media (min-width: 320px) {
   /* Main content styling */
-  main {
-    width: 100vw;
-  }
   main .comments {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -395,8 +402,8 @@ a {
     margin-right: 5%;
   }
   main .comments h1 {
-    padding-top: 32px;
-    padding-bottom: 40px;
+    margin-top: 32px;
+    margin-bottom: 40px;
   }
   main .comments__form {
     display: -webkit-box;
@@ -434,6 +441,12 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  main .comments--icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+  }
   main .comments form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -442,12 +455,11 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 224px;
   }
   main .comments form input {
     border: 2px #323232 solid;
-    height: 50px;
-    margin-bottom: 25px;
+    height: 48px;
+    margin-bottom: 24px;
     background-color: #FAFAFA;
     border-radius: 4px;
   }
@@ -456,6 +468,9 @@ a {
     margin-bottom: 24px;
     background-color: #FAFAFA;
     border-radius: 6px;
+  }
+  main .comments form textareaplaceholder {
+    margin-top: 2%;
   }
   main .comments form button {
     background-color: #323232;
@@ -496,25 +511,40 @@ a {
             flex-direction: column;
     width: 20%;
   }
-  main .comments .comments-table .comments__published .username, main .comments .comments-table .comments__published .date {
+  main .comments .comments-table .comments__published .comments__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80%;
+  }
+  main .comments .comments-table .comments__published .comments__body .username, main .comments .comments-table .comments__published .comments__body .date {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 50%;
             flex: 1 1 50%;
   }
-  main .comments .comments-table .comments__published .date {
+  main .comments .comments-table .comments__published .comments__body .date {
     text-align: right;
     color: #E1E1E1;
   }
-  main .comments .comments-table .comments__published .username {
+  main .comments .comments-table .comments__published .comments__body .username {
     font-weight: bold;
   }
-  main .comments .comments-table .comments__published .input {
+  main .comments .comments-table .comments__published .comments__body .input {
     margin-top: 5%;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
-  main--icon {
+  main .comments--icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -533,86 +563,85 @@ a {
 @media (min-width: 768px) {
   /* Main content styling */
   main .comments {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 16px;
-    margin-right: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 6%;
   }
   main .comments h1 {
-    padding-top: 32px;
-    padding-bottom: 40px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   main .comments__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    width: 67.7%;
   }
   main .comments__form--icon {
-    margin-right: 16px;
-  }
-  main .comments__form--icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    margin-right: 2%;
+    width: 10%;
   }
   main .comments form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 224px;
-  }
-  main .comments form input {
-    border: 1px black solid;
-    height: 50px;
-    margin-bottom: 25px;
+    width: 90%;
   }
   main .comments form button {
-    background-color: black;
-    color: white;
-    height: 35px;
-    width: 224px;
+    width: 148px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    margin-bottom: 32px;
   }
-  main .comments .comments__published {
+  main .comments .comments-table {
+    width: 67.7%;
+  }
+  main .comments .comments-table .comments__published {
     padding-top: 24px;
     padding-bottom: 24px;
   }
-  main .comments .comments-username {
+  main .comments .comments-table .comments__published .comments__img {
+    width: 12%;
+  }
+  main .comments .comments-table .comments__published .comments__body {
+    width: 100%;
+  }
+  main .comments .comments-table .comments__published .comments__body .username, main .comments .comments-table .comments__published .comments__body .date {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    margin-right: 3%;
+  }
+  main .comments .comments-table .comments__published .comments__body .input {
+    margin-top: 3%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  main .comments .comments-table .comments-username {
     font-weight: bold;
   }
 }
 
 /* styling for desktop from 1440px */
 @media (min-width: 1440px) {
-  .comments {
-    margin-left: 180px;
-    margin-right: 180px;
+  main .comments {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
   }
-  .comments__form--icon img {
-    width: 48px;
-    height: 48px;
-    margin-top: 25px;
+  main .comments h1 {
+    margin-top: 48px;
+    margin-bottom: 56px;
   }
-  .comments #myForm {
+  main .comments__form {
+    width: 520px;
+  }
+  main .comments__form--icon {
+    margin-right: 20px;
+  }
+  main .comments #myForm {
     width: 460px;
+  }
+  main .comments .comments-table {
+    width: 520px;
+  }
+  main .comments form button {
+    width: 160px;
   }
 }
 
@@ -706,13 +735,8 @@ a {
     color: #AFAFAF;
     text-transform: uppercase;
     font-weight: 500;
-  }
-  main .shows .shows-table .event p {
-    margin-top: 16px;
-    margin-bottom: 24px;
-  }
-  main .shows .shows-table .event .date, main .shows .shows-table .event .venue, main .shows .shows-table .event .location {
     margin-top: 24px;
+    margin-bottom: 16px;
   }
   main .shows .shows-table .event button {
     background-color: #323232;
@@ -730,88 +754,6 @@ a {
   main .shows .shows-table #show {
     margin-top: 0;
   }
-  main .shows .comments {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  main .shows .comments h1 {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  main .shows .comments__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  main .shows .comments__form--icon {
-    margin-right: 16px;
-  }
-  main .shows .comments__form--icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  main .shows .comments__form #myForm .formName {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  main .shows .comments__form #myForm .formComment {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  main .shows .comments form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 224px;
-  }
-  main .shows .comments form input {
-    border: 1px black solid;
-    height: 50px;
-    margin-bottom: 25px;
-    border-radius: 10%;
-  }
-  main .shows .comments form button {
-    background-color: black;
-    color: white;
-    height: 35px;
-    width: 224px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    margin-bottom: 32px;
-  }
-  main .shows .comments .comments__published {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
 }
 
 /* styling for tablet from 768px */
@@ -821,12 +763,7 @@ a {
     height: 670px;
     margin-bottom: 32px;
   }
-  main .main__hero--show--layer {
-    background-color: #323232;
-    opacity: 0.5;
-  }
   main .main__hero--show h1, main .main__hero--show h2 {
-    color: #ffffff;
     margin-bottom: 24px;
   }
   main .titles {
@@ -834,13 +771,6 @@ a {
     margin-top: 96px;
     margin-left: 24px;
     margin-right: 24px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
   main iframe {
     margin-left: 24px;
@@ -850,14 +780,9 @@ a {
   main .shows {
     margin-left: 24px;
     margin-right: 24px;
-    margin-bottom: 32px;
   }
   main .shows h1 {
     width: 30%;
-    margin-bottom: 40px;
-  }
-  main .shows .shows-table {
-    width: 100%;
   }
   main .shows .shows-table table, main .shows .shows-table thead, main .shows .shows-table tbody, main .shows .shows-table th, main .shows .shows-table td, main .shows .shows-table tr {
     display: inline-block;
@@ -882,7 +807,6 @@ a {
     display: block;
   }
   main .shows .shows-table .event {
-    border-bottom: 1px solid #AFAFAF;
     margin-top: 0px;
     vertical-align: baseline;
   }
@@ -897,91 +821,13 @@ a {
     margin-top: 24px;
   }
   main .shows .shows-table .event button {
-    background-color: #323232;
-    color: #ffffff;
     width: 160px;
-    height: 50px;
-    text-align: center;
-    vertical-align: center;
-    margin-bottom: 16px;
-    margin-top: 32px;
-    text-transform: uppercase;
-    font-weight: 500;
     font-size: 12px;
-  }
-  main .shows .comments {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  main .shows .comments h1 {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  main .shows .comments__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  main .shows .comments__form--icon {
-    margin-right: 16px;
-  }
-  main .shows .comments__form--icon img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  main .shows .comments form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 224px;
-  }
-  main .shows .comments form input {
-    border: 1px black solid;
-    height: 50px;
-    margin-bottom: 25px;
-  }
-  main .shows .comments form button {
-    background-color: black;
-    color: white;
-    height: 35px;
-    width: 224px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    margin-bottom: 32px;
-  }
-  main .shows .comments .comments__published {
-    padding-top: 24px;
-    padding-bottom: 24px;
   }
 }
 
 /* styling for desktop from 1440px */
 @media (min-width: 1440px) {
-  main .main__hero {
-    height: 670px;
-  }
-  main .main__hero h1 {
-    margin-left: 180px;
-  }
   main .main__hero--show {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -990,6 +836,7 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-bottom: 48px;
   }
   main .main__hero--show .titles {
     margin-top: 160px;
@@ -1020,6 +867,10 @@ a {
         -ms-flex-direction: row;
             flex-direction: row;
     margin-left: 180px;
+    margin-right: 180px;
+  }
+  main .shows .shows-table .event button {
+    margin-top: 40px;
   }
 }
 
@@ -1058,7 +909,6 @@ html, body {
   }
   main .main__hero--layer {
     background-color: #323232;
-    opacity: 0.5;
   }
   main .main__hero h1 {
     color: #ffffff;
@@ -1167,171 +1017,9 @@ html, body {
     -webkit-filter: grayscale(0%);
             filter: grayscale(0%);
   }
-  main .comments {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  main .comments h1 {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  main .comments__form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  main .comments__form--icon {
-    margin-right: 5%;
-  }
-  main .comments__form--icon img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-top: 25px;
-  }
-  main .comments__form #myForm .formName {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  main .comments__form #myForm .formComment {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  main .comments form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 224px;
-  }
-  main .comments form input {
-    border: 2px #323232 solid;
-    height: 50px;
-    margin-bottom: 25px;
-    background-color: #FAFAFA;
-    border-radius: 4px;
-  }
-  main .comments form textarea {
-    border: 2px #E1E1E1 solid;
-    margin-bottom: 24px;
-    background-color: #FAFAFA;
-    border-radius: 6px;
-  }
-  main .comments form button {
-    background-color: #323232;
-    color: white;
-    height: 48px;
-    width: 224px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    margin-bottom: 32px;
-    border-radius: 4px;
-    font-family: "Avenir Next";
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  main .comments form button:hover {
-    background-color: black;
-  }
-  main .comments .comments-table .comments__published {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #E1E1E1;
-    width: 100%;
-  }
-  main .comments .comments-table .comments__published .comments__img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 20%;
-  }
-  main .comments .comments-table .comments__published .comments__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 80%;
-  }
-  main .comments .comments-table .comments__published .comments__body .comments-username, main .comments .comments-table .comments__published .comments__body .comments-date {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
-  }
-  main .comments .comments-table .comments__published .comments__body .comments-date {
-    text-align: right;
-    color: #E1E1E1;
-  }
-  main .comments .comments-table .comments__published .comments__body .comments-username {
-    font-weight: bold;
-  }
-  main .comments .comments-table .comments__published .comments__body .comments-comment {
-    margin-top: 5%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-  }
-  main .comments--icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #FAFAFA;
-  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 320px) and (min-width: 768px) {
   /* Main content styling */
   main .main__hero {
     height: 400px;
@@ -1405,7 +1093,7 @@ html, body {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 320px) and (min-width: 1440px) {
   .menu ul {
     width: 40%;
     -webkit-box-pack: justify;

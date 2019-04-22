@@ -1,5 +1,5 @@
-var button = document.querySelector('#Btn');
-var table = document.querySelector('.comments-table');
+let button = document.querySelector('#Btn');
+let table = document.querySelector('.comments-table');
 
 // Add new information to a new comment 
 let newComment= {
@@ -33,6 +33,21 @@ let commentsTable = [
    }
 ];
 
+// date function
+
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() + 1;
+
+let yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = '0' + dd;
+} 
+if (mm < 10) {
+  mm = '0' + mm;
+} 
+let today = dd + '/' + mm + '/' + yyyy;
+
 // Add new information to a new comment Object
 function createComment (){
     newCommentName = document.querySelector('#Name').value;
@@ -40,27 +55,22 @@ function createComment (){
     newCommentInput = document.querySelector('#Comment').value;
     newComment.commentInput= newCommentInput;
     newComment.nameIcon = '';
-    newComment.commentDate = '';
+    newComment.commentDate = today;
     }
   
 function addComment(){
     commentsTable.unshift(newComment);
-          // { nameIcon: '',
-          // commentDate:'',
-          // commentInput: newCommentInput,
-          // userName: newCommentName}
-      //);// adding comment object to array
   }
 
  function displayComments() {  
-    for (var i= 0; i< commentsTable.length; i++) {
-    var published = document.createElement('div');
-    var image = document.createElement('div');
-    var body = document.createElement('div');
-    var nameElement = document.createElement('div');
-    var commentElement = document.createElement('div');
-    var dateElement = document.createElement('div');
-    var imageElement = document.createElement('div');
+    for (let i= 0; i< commentsTable.length; i++) {
+    let published = document.createElement('div');
+    let image = document.createElement('div');
+    let body = document.createElement('div');
+    let nameElement = document.createElement('div');
+    let commentElement = document.createElement('div');
+    let dateElement = document.createElement('div');
+    let imageElement = document.createElement('div');
     
     // declare variables
 
@@ -93,12 +103,15 @@ function addComment(){
     published.appendChild(body);
     table.appendChild(published);
     }
-    // commentsTable++;
+    commentsTable++;
 }
 
 window.onload = displayComments(commentsTable);
 
-button.onclick = function() {
+
+document.getElementById("Btn").addEventListener("click", submit) 
+
+function submit() {
     // prevent the webpage from reloading
         event.preventDefault();
     // declare variables
@@ -106,39 +119,3 @@ button.onclick = function() {
     displayComments();
     document.getElementById("myForm").reset();
     }
-
-
-/*
-button.onclick = function() {
-// prevent the webpage from reloading
-        event.preventDefault();
-// declare variables
-let formName = document.querySelector('#name');
-var formComment = document.querySelector('#comment');
-var formDate = document.querySelector('#date');
-var formImage = document.querySelector('#image');
-
-//   var newElement = document.createElement('div')
-  var nameElement = document.createElement('div');
-  var commentElement = document.createElement('div');
-  var dateElement = document.createElement('div');
-  var imageElement = document.createElement('div');
-
-// adding value to variable
-  nameElement.innerText = formName.value;
-  commentElement.innerText = formComment.value;
-
-//   newElement.classList.add('item')
-  nameElement.classList.add('item')
-  commentElement.classList.add('item')
-  dateElement.classList.add('item')
-  imageElement.classList.add('item')
-
-//   comments.appendChild(newElement)
-  table.appendChild(nameElement);
-  table.appendChild(commentElement);
-  table.appendChild(dateElement);
-  table.appendChild(imageElement);
-}
-*/
-

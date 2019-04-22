@@ -53,7 +53,7 @@ h3 {
 
 }
 
-h4, p, label {
+h4, p {
     font-size: 14px;
     line-height: 22px;
     color: $black-color;
@@ -72,8 +72,16 @@ h5 {
     line-height: 20px;
     font-weight: 400;
     color: $black-color;
+}
 
-
+label {
+    font-size: 12px;
+    line-height: 20px;
+    color: $silver-color;
+    text-transform: uppercase;
+    font-weight: $font-demibold;
+    color: $mercury-color;
+    padding-bottom: 8px;
 }
 }
 
@@ -94,7 +102,7 @@ h2 {
 
 }
 
-h4, p, ul, ol, label {
+h4, p, ul, ol {
     font-size: 13px;
     line-height: 18px;
     color: $black-color;
@@ -115,7 +123,8 @@ label {
     color: $silver-color;
     text-transform: uppercase;
     font-weight: $font-demibold;
-    color: $black-color;
+    color: $mercury-color;
+    padding-bottom: 8px;
 
 }
 }

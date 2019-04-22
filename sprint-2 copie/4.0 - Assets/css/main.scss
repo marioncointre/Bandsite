@@ -37,7 +37,7 @@ html, body {
     
                 &--layer { // image opacity
                     background-color: #323232;
-                    opacity: 0.5;
+                    // opacity: 0.5;
                 }
         
                 h1 {
@@ -125,141 +125,6 @@ html, body {
                     
                     }
                 }   
-            }
-    
-            .comments { // Comments section
-                @include column;
-                align-items: center;
-                margin-left: 5%;
-                margin-right: 5%;
-    
-                    h1 {
-                        padding-top: 32px;
-                        padding-bottom : 40px;
-                    }
-    
-                    &__form {
-                        @include row;
-                        &--icon {
-    
-                            margin-right: 5%;
-    
-                            img {
-                                width: 48px;
-                                height: 48px;
-                                border-radius: 50%;
-                                margin-top: 25px;
-                            }    
-                        }
-    
-                        #myForm{
-    
-                            .formName{ 
-                                display: flex;
-                                flex-direction: column;
-                            }
-        
-                            .formComment{
-                                display: flex;
-                                flex-direction: column;
-        
-                            }
-        
-                            }
-                    }
-    
-                    form {
-                        @include column;
-                        width: 224px;
-    
-                        input {
-                            border: 2px $black-color solid;
-                            height: 50px;
-                            margin-bottom: 25px;
-                            background-color: $lightgrey;
-                            border-radius: 4px;
-                        }
-    
-                        textarea {
-                            border: 2px $mercury-color solid;
-                            margin-bottom: 24px;
-                            background-color: $lightgrey;
-                            border-radius: 6px;
-                        }
-    
-                        button {
-                            background-color: $black-color;
-                            color: white;
-                            height: 48px;
-                            width: 224px;
-                            align-self: flex-end;
-                            margin-bottom: 32px;
-                            border-radius: 4px;
-                            font-family: "Avenir Next";
-                            text-transform: uppercase;
-                            font-weight: $font-demibold;
-    
-                            &:hover {
-                                background-color: black;
-    
-                            }
-                        }
-                }
-                
-                .comments-table {
-    
-                    .comments__published {
-                    @include row;
-                    padding-top: 24px;
-                    padding-bottom: 24px;
-                    border-bottom: 1px solid $mercury-color;
-                    width: 100%;
-    
-                    .comments__img {
-                        @include column;
-                        width: 20%;
-                    }
-    
-                    .comments__body {
-                        @include row;
-                        align-items: center;
-                        flex-wrap: wrap;
-                        width: 80%;
-    
-    
-                        .comments-username, .comments-date {
-                            flex:1 1 50%; 
-                        }
-                        .comments-date {
-                            text-align: right;
-                            color: $mercury-color;
-                        }
-                        .comments-username {
-                            font-weight: $font-bold;
-                        }
-    
-    
-                        .comments-comment {
-                            margin-top: 5%;
-                            flex:1 1 100%;
-                        }
-    
-                    }
-    
-                    }
-                }
-    
-                    &--icon {
-                        display: flex;
-                        flex-direction: column;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        background-color: $lightgrey;
-    
-    
-                    }
-                }
             }
         }
 
@@ -443,4 +308,4 @@ html, body {
             }
                     
         } 
-        
+    }
