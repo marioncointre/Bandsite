@@ -1,18 +1,7 @@
 let button = document.querySelector('#Btn');
 let table = document.querySelector('.comments-table');
 
-// Add new information to a new comment 
-let newComment= {
-    nameIcon: '',
-    commentDate:'',
-    userName: '',
-    commentInput: ''
-};
-
-let newCommentName = '';
-let newCommentInput ='';
-
-let commentsTable = [
+const commentsTable = [
   {
    nameIcon: '',
    commentDate:'12/18/2018',
@@ -33,6 +22,17 @@ let commentsTable = [
    }
 ];
 
+// Add new information to a new comment 
+let newComment= {
+    nameIcon: '',
+    commentDate:'',
+    userName: '',
+    commentInput: ''
+};
+
+let newCommentName = '';
+let newCommentInput ='';
+
 // date function
 
 let today = new Date();
@@ -46,21 +46,46 @@ if (dd < 10) {
 if (mm < 10) {
   mm = '0' + mm;
 } 
-let today = dd + '/' + mm + '/' + yyyy;
+today = dd + '/' + mm + '/' + yyyy;
 
 // Add new information to a new comment Object
 function createComment (){
-    newCommentName = document.querySelector('#Name').value;
-    newComment.userName = newCommentName;
-    newCommentInput = document.querySelector('#Comment').value;
-    newComment.commentInput= newCommentInput;
-    newComment.nameIcon = '';
-    newComment.commentDate = today;
-    }
-  
-function addComment(){
+/*    commentsTable = [
+        {
+        nameIcon: '',
+        commentDate:'12/18/2018',
+        userName:'Micheal Lyons',
+        commentInput:'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
+        },
+        {
+        nameIcon: '',
+        commentDate:'12/18/2018',
+        userName:'Gary Wong',
+        commentInput:'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
+        },
+        {
+        nameIcon: '',
+        commentDate:'11/15/2018',
+        userName:'Theodore Duncan',
+        commentInput:'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!'
+        }];
+*/
+        newCommentName = document.querySelector('#Name').value;
+        newComment.userName = newCommentName;
+        newCommentInput = document.querySelector('#Comment').value;
+        newComment.commentInput= newCommentInput;
+        newComment.nameIcon = '';
+        newComment.commentDate = today;
+
+        newComment= {
+        nameIcon: newComment.nameIcon,
+        commentDate: newComment.commentDate ,
+        userName: newComment.userName,
+        commentInput: newComment.commentInput
+    };   
     commentsTable.unshift(newComment);
-  }
+   }
+
 
  function displayComments() {  
     for (let i= 0; i< commentsTable.length; i++) {
@@ -103,19 +128,20 @@ function addComment(){
     published.appendChild(body);
     table.appendChild(published);
     }
-    commentsTable++;
 }
 
 window.onload = displayComments(commentsTable);
 
-
 document.getElementById("Btn").addEventListener("click", submit) 
 
-function submit() {
+function submit(event) {
     // prevent the webpage from reloading
         event.preventDefault();
     // declare variables
     createComment();
+    // table.classList.add('hidden');
+    document.querySelector('.comments-table').innerHTML = '';
     displayComments();
+    // table.classList.remove('hidden');
     document.getElementById("myForm").reset();
     }

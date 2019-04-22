@@ -488,6 +488,9 @@ a {
   main .comments form button:hover {
     background-color: black;
   }
+  main .comments .hidden {
+    display: none;
+  }
   main .comments .comments-table .comments__published {
     display: -webkit-box;
     display: -ms-flexbox;

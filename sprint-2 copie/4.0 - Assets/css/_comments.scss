@@ -96,7 +96,10 @@
                         }
                     }
             }
-            
+            .hidden {
+                display: none;
+            }
+
             .comments-table {
 
                 .comments__published {
@@ -149,6 +152,7 @@
 
 
                 }
+        
             }
 
     }
