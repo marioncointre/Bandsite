@@ -1,0 +1,147 @@
+
+  /* Default CSS styling for mobile 320px */
+    @media (min-width: 320px){
+    
+    /* Footer styling */
+
+    footer {
+        background-color: $black-color;
+        @include row;
+        justify-content: center;
+
+        .footer {
+
+        &__contact {       
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-top: 40px;
+            @include column;
+            align-content: flex-start;
+            color: $primary-color;
+
+            &--title { // title + icons    
+                @include column;
+
+                h1 {
+                    padding-bottom: 1em;
+                }
+
+                .footer__contact--img { // icons + logo
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 40px;
+                   
+                    .footer__contact--icons { // icons
+                        display: flex;
+                        justify-content: space-between;
+                        width: 40%;
+                    }
+                    .footer__logo { // logo
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__columns { // agency details
+            @include column;
+            
+            &--agency, &--address, &--email {
+                padding-bottom: 10px;
+            }
+
+            &--agency { // agency name
+                font-weight: $font-demibold;
+            }
+            p {
+                color: $primary-color;
+            }
+        }
+        
+        &__copyright { //copyright mention
+            font-weight: 100;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+        }
+    }
+    }
+}
+
+
+  /* styling for tablet from 768px */
+    @media (min-width: 768px) {
+
+/* Footer styling */
+        footer {
+    
+            .footer {
+                width: 100%;
+    
+            &__contact {            
+                width: 720px;
+                margin-left: 24px;
+                margin-right: 24px;
+    
+                &--title { // title + icons
+                    @include row;
+                    justify-content: space-between;
+    
+                    h1 {
+                        padding-bottom: 40px;
+                    }
+    
+                    .footer__contact--img {
+                        width: 66%;
+                        align-items: center;
+
+                        .footer__contact--icons { // icons + logo
+                            justify-content: space-evenly;
+                            width: 35%;
+                        }
+                        .footer__logo { // logo
+                            display: unset;
+                            justify-self: flex-start;
+                        }
+                    }
+                }
+            }
+    
+            &__columns { //agency details
+                @include row;
+                justify-content: space-between;            
+            }
+        }        
+    }
+}
+
+  /* styling for desktop from 1440px */
+    @media (min-width: 1440px){
+    
+    footer {
+        .footer {
+            width: 100%;
+    
+            &__contact {            
+                width: 1080px;
+                margin-left: 180px;
+                margin-right: 180px;
+
+                &--title {
+                    align-items: center;
+        
+                    .footer__contact--img {
+                        padding-bottom: 40px;
+    
+                        .footer__contact--icons {
+                            width: 23%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
