@@ -17,15 +17,6 @@ let comArrResBody = [];
 let comArrResDate = [];
 
 
-function timeDate (stamp) {
-    var d = new Date(stamp*1000);
-    var timeStampDate = d.getDate() + '/' + (d.getMonth()) + '/' + d.getFullYear() + " " + d.getHours() + ':' + d.getMinutes();
-    return timeStampDate
-}
-
-
-
-
 let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=authkey')
     
     comArr.then(function(response){
@@ -38,6 +29,7 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
 
     function displayComments() {  
         for (let j = 0; j<comArrRes.length; j++){
+            
         for (let i= 0; i<comArrResNames.length; i++) {
         //Creating elements
         let published = document.createElement('div');
@@ -66,9 +58,10 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
         table.appendChild(published);
 
         }
+
         for (let i=0; i<comArrResDate.length; i++){
 
-            timeDate (comArrResDate[i]);
+            timeDate(comArrResDate[i]);
 
             let published = document.createElement('div');
             let body = document.createElement('div');
