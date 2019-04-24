@@ -29,28 +29,24 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
     })
     comArr.then(function displayComments(){  
         for (let i= 0; i<comArrResNames.length; i++) {
-        //Creating elements
         let published = document.createElement('div');
         let body = document.createElement('div');
         let nameElement = document.createElement('div');        
         nameElement.innerText = comArrResNames[i]
         nameElement.classList.add('username')
     
-    //   comments.appendChild(newElement)
         body.appendChild(nameElement);
         published.appendChild(body);
         table.appendChild(published);
         }
 
         for (let i=0; i<comArrResBody.length; i++){
-        //Creating elements
         let published = document.createElement('div');
         let body = document.createElement('div');
         let commentElement = document.createElement('div');
         commentElement.innerText = comArrResBody[i]
         commentElement.classList.add('input')
     
-    //   comments.appendChild(newElement)
         body.appendChild(commentElement);
         published.appendChild(body);
         table.appendChild(published);
@@ -58,8 +54,6 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
         }
 
         for (let i=0; i<comArrResDate.length; i++){
-
-            // timeDate(comArrResDate[i]);
 
             let published = document.createElement('div');
             let body = document.createElement('div');
