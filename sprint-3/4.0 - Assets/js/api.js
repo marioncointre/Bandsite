@@ -39,13 +39,13 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
 
         function displayComments() {  
         for (let i= 0; i<comArrResNames.length; i++) {
-        // let published = document.createElement('div');
-        // let image = document.createElement('div');
-        // let body = document.createElement('div');
+        let published = document.createElement('div');
+        let image = document.createElement('div');
+        let body = document.createElement('div');
         let nameElement = document.createElement('div');
-        // let commentElement = document.createElement('div');
-        // let dateElement = document.createElement('div');
-        // let imageElement = document.createElement('div');
+        let commentElement = document.createElement('div');
+        let dateElement = document.createElement('div');
+        let imageElement = document.createElement('div');
         
         // declare variables
     

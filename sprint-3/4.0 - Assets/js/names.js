@@ -26,10 +26,8 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
             comArrResBody.push(response.data[i].comment)       
             comArrResDate.push(response.data[i].timestamp)              
     }
-
-    function displayComments() {  
-        for (let j = 0; j<comArrRes.length; j++){
-            
+    })
+    comArr.then(function displayComments(){  
         for (let i= 0; i<comArrResNames.length; i++) {
         //Creating elements
         let published = document.createElement('div');
@@ -61,7 +59,7 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
 
         for (let i=0; i<comArrResDate.length; i++){
 
-            timeDate(comArrResDate[i]);
+            // timeDate(comArrResDate[i]);
 
             let published = document.createElement('div');
             let body = document.createElement('div');
@@ -73,10 +71,8 @@ let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=aut
             table.appendChild(published);
     
             }
-        }
-    }
-    displayComments() 
-})
+        })
+    
 
 
 
