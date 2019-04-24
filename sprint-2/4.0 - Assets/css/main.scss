@@ -33,7 +33,7 @@ html, body {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                margin-bottom: 32px;
+                margin-bottom: 10%;
     
                 &--layer { // image opacity
                     background-color: #323232;
@@ -54,20 +54,15 @@ html, body {
     
                 h1 {
                     align-self: flex-start;
-                    margin-bottom: 24px;
+                    margin-bottom: 8%;
                     text-transform: capitalize;
                 }
                 .about__content { // main about content
-                    margin-bottom: 40px;
+                    margin-bottom: 14%;
     
-                    >h2 {
-                        text-align: left;
-                        margin-bottom: 24px;
-                    }
-        
                     .about__content--img { //about image hero
                         @include column;
-                        margin-bottom: 24px;
+                        margin-bottom: 8%;
     
                         img {
                         max-width: 288px;
