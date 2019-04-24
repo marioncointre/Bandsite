@@ -1,61 +1,73 @@
+        // document.querySelector('.comments-table').innerHTML = JSON.stringify(comArrRes);
+
+
 
 // Authentification 
-var authkey = axios.get('https://project-1-api.herokuapp.com/register')
+const authentificationKey = axios.get('https://project-1-api.herokuapp.com/register')
 
-authkey.then(function(response){
-    var authentificationKey =response.data.api_key;
+authentificationKey.then(function(response){
+    const authkey = response.data.api_key;
 })
 
 //GET Array of comments
 
-let table = document.querySelector('.comments-table');
+const table = document.querySelector('.comments-table');
+let comArrResNames= [];
 
 
-var commentsArray = axios.get('https://project-1-api.herokuapp.com/comments?api_key=authkey')
-    commentsArray.then(function(response){
-        var commentsArrayResponse = JSON.stringify(response.data)
-        var commentsArrayResponseNames = JSON.stringify(response.data.name)
-        var commentsArrayResponseBody = JSON.stringify(response.data.comment)
-        var commentsArrayResponseDate = JSON.stringify(response.data.timestamp)
 
-        console.log(commentsArrayResponse)
-        // console.log(commentsArrayResponseNames)
-        // console.log(commentsArrayResponseBody)
-        // console.log(commentsArrayResponseDate)
+let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=authkey')
+    
+    comArr.then(function(response){
+        let comArrRes = (response.data)
 
-        // document.querySelector('.comments-table').innerHTML = JSON.stringify(commentsArrayResponse);
+        for (let i = 0; i<comArrRes.length; i++){
+        let comArrResNames = JSON.stringify(response.data[i].name)
+        console.log(comArrResNames)
+        }
+
+        for (let i = 0; i<comArrRes.length; i++){
+            let comArrResBody = JSON.stringify(response.data[i].comment)
+            console.log(comArrResBody)
+            }
+
+        for (let i = 0; i<comArrRes.length; i++){
+            let comArrResDate = JSON.stringify(response.data[i].timestamp)
+            console.log(comArrResDate)
+            }
+
 
         function displayComments() {  
-        for (let i= 0; i< commentsArrayResponse.length; i++) {
-        let published = document.createElement('div');
-        let image = document.createElement('div');
-        let body = document.createElement('div');
+        for (let i= 0; i<comArrResNames.length; i++) {
+        // let published = document.createElement('div');
+        // let image = document.createElement('div');
+        // let body = document.createElement('div');
         let nameElement = document.createElement('div');
-        let commentElement = document.createElement('div');
-        let dateElement = document.createElement('div');
-        let imageElement = document.createElement('div');
+        // let commentElement = document.createElement('div');
+        // let dateElement = document.createElement('div');
+        // let imageElement = document.createElement('div');
         
         // declare variables
     
-        let userName = commentsArrayResponse[i].userName;
-        let commentInput = commentsArrayResponse[i].commentInput;
-        let commentDate = commentsArrayResponse[i].commentDate;
-        let nameIcon = commentsArrayResponse[i].nameIcon;
+        let userName = comArrResNames[i].userName;
+        // let commentInput = comArrRes[i].commentInput;
+        // let commentDate = comArrRes[i].commentDate;
+        // let nameIcon = comArrRes[i].nameIcon;
     
         // adding value to variable
-        imageElement.innerText = nameIcon;
+        // imageElement.innerText = nameIcon;
         nameElement.innerText = userName;
-        dateElement.innerText = commentDate;
-        commentElement.innerText = commentInput;
+        // dateElement.innerText = commentDate;
+        // commentElement.innerText = commentInput;
     
     //   newElement.classList.add('item')
-        published.classList.add('comments__published')
+        // published.classList.add('comments__published')
         nameElement.classList.add('username')
-        commentElement.classList.add('input')
-        dateElement.classList.add('date')
-        imageElement.classList.add('comments--icon')
-        image.classList.add('comments__img')
-        body.classList.add('comments__body');
+        // commentElement.classList.add('input')
+        // dateElement.classList.add('date')
+        // imageElement.classList.add('comments--icon')
+        // image.classList.add('comments__img')
+        // body.classList.add('comments__body');
     
     //   comments.appendChild(newElement)
         body.appendChild(nameElement);
@@ -118,9 +130,9 @@ var commentsArray = axios.get('https://project-1-api.herokuapp.com/comments?api_
 
 
 // GET Show dates
-// var showdatesArray = axios.get('https://project-1-api.herokuapp.com/showdates?api_key=authkey')
+// let showdatesArray = axios.get('https://project-1-api.herokuapp.com/showdates?api_key=authkey')
 
-// commentsArray.then(function(response){
+// comArr.then(function(response){
 //     console.log(response.data)
 // })
 
