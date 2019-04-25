@@ -1,9 +1,9 @@
 /* Variables */
 @font-face {
   font-family: 'Avenir Next';
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold");
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
-  src: url("../4.0 - Assets/_Global Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Bold.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Demi.otf");
+  src: url("../Fonts/Linotype_AvenirNextLTPro_Regular.otf");
 }
 
 /* Variables */
@@ -897,7 +897,7 @@ html, body {
   }
   main .main__hero {
     height: 183px;
-    background-image: url("../../4.0 - Assets/Images/israel-palacio-459693-unsplash.jpg");
+    background-image: url("../../assets/Images/israel-palacio-459693-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: -webkit-box;
