@@ -9,9 +9,7 @@ const authentificationKey = axios.get(
 authentificationKey.then(function(response) {
   const authkey = response.data.api_key;
 });
-
 let commentsTable = [];
-
 // date function
 let today = new Date();
 let dd = today.getDate();
@@ -29,6 +27,7 @@ today = dd + "/" + mm + "/" + yyyy;
 let comArr = axios.get(
   "https://project-1-api.herokuapp.com/comments?api_key=authkey"
 );
+
 comArr.then(function(response) {
   let comArrRes = response.data;
 
@@ -94,10 +93,7 @@ comArr.then(function(response) {
       table.appendChild(published);
     }
   }
-  window.document.onload = displayComments();
-
   // Create comment with form
-
   function createComment(name, comment) {
     axios
       .post("https://project-1-api.herokuapp.com/comments?api_key=authkey", {
@@ -128,3 +124,6 @@ comArr.then(function(response) {
     }
   }
 });
+function newFunction(displayComments) {
+  displayComments();
+}
