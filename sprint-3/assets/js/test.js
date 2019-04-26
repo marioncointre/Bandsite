@@ -1,12 +1,14 @@
-let button = document.querySelector('#Btn');
-let table = document.querySelector('.comments-table');
+let button = document.querySelector("#Btn");
+let table = document.querySelector(".comments-table");
 
-// Authentification 
-const authentificationKey = axios.get('https://project-1-api.herokuapp.com/register')
+// Authentification
+const authentificationKey = axios.get(
+  "https://project-1-api.herokuapp.com/register"
+);
 
-authentificationKey.then(function(response){
-    const authkey = response.data.api_key;
-})
+authentificationKey.then(function(response) {
+  const authkey = response.data.api_key;
+});
 
 let commentsTable = [];
 
@@ -16,109 +18,113 @@ let dd = today.getDate();
 let mm = today.getMonth() + 1;
 let yyyy = today.getFullYear();
 if (dd < 10) {
-  dd = '0' + dd;
-} 
+  dd = "0" + dd;
+}
 if (mm < 10) {
-  mm = '0' + mm;
-} 
-today = dd + '/' + mm + '/' + yyyy;
+  mm = "0" + mm;
+}
+today = dd + "/" + mm + "/" + yyyy;
 
 //Get array of comments from API
-let comArr = axios.get('https://project-1-api.herokuapp.com/comments?api_key=authkey')   
-comArr.then(function(response){
-    let comArrRes = (response.data);
+let comArr = axios.get(
+  "https://project-1-api.herokuapp.com/comments?api_key=authkey"
+);
+comArr.then(function(response) {
+  let comArrRes = response.data;
 
-// format API array in correct form 
-    function transformComment (){
-        for (let i = 0; i<comArrRes.length; i++){ // loop through array to transform elements as objects
-   
-    // Add new information to a new comment 
-        let newComment= {
-            nameIcon: '',
-            commentDate:'',
-            userName: '',
-            commentInput: ''
-    };
+  // format API array in correct form
+  function transformComment() {
+    for (let i = 0; i < comArrRes.length; i++) {
+      // loop through array to transform elements as objects
 
-    newComment.userName = response.data[i].name;
-    newComment.commentInput = response.data[i].comment
-    newComment.nameIcon = '';
-    newComment.commentDate = response.data[i].timestamp;
+      // Add new information to a new comment
+      let newComment = {
+        nameIcon: "",
+        commentDate: "",
+        userName: "",
+        commentInput: ""
+      };
 
-    commentsTable.push(newComment);
+      newComment.userName = response.data[i].name;
+      newComment.commentInput = response.data[i].comment;
+      newComment.nameIcon = "";
+      newComment.commentDate = response.data[i].timestamp;
+
+      commentsTable.push(newComment);
     }
-}
-    function displayComments() {  
-        for (let i= 0; i< commentsTable.length; i++) {
-            let published = document.createElement('div');
-            let image = document.createElement('div');
-            let body = document.createElement('div');
-            let nameElement = document.createElement('div');
-            let commentElement = document.createElement('div');
-            let dateElement = document.createElement('div');
-            let imageElement = document.createElement('div');
-    
-    // declare variables
-            let userName = commentsTable[i].userName;
-            let commentInput = commentsTable[i].commentInput;
-            let commentDate = commentsTable[i].commentDate;
-            let nameIcon = commentsTable[i].nameIcon;
+  }
+  function displayComments() {
+    for (let i = 0; i < commentsTable.length; i++) {
+      let published = document.createElement("div");
+      let image = document.createElement("div");
+      let body = document.createElement("div");
+      let nameElement = document.createElement("div");
+      let commentElement = document.createElement("div");
+      let dateElement = document.createElement("div");
+      let imageElement = document.createElement("div");
 
-    // adding value to variable
-            imageElement.innerText = nameIcon;
-            nameElement.innerText = userName;
-            dateElement.innerText = commentDate;
-            commentElement.innerText = commentInput;
+      // declare variables
+      let userName = commentsTable[i].userName;
+      let commentInput = commentsTable[i].commentInput;
+      let commentDate = commentsTable[i].commentDate;
+      let nameIcon = commentsTable[i].nameIcon;
 
-//   newElement.classList.add('item')
-            published.classList.add('comments__published')
-            nameElement.classList.add('username')
-            commentElement.classList.add('input')
-            dateElement.classList.add('date')
-            imageElement.classList.add('comments--icon')
-            image.classList.add('comments__img')
-            body.classList.add('comments__body');
+      // adding value to variable
+      imageElement.innerText = nameIcon;
+      nameElement.innerText = userName;
+      dateElement.innerText = commentDate;
+      commentElement.innerText = commentInput;
 
-//   comments.appendChild(newElement)
-            body.appendChild(nameElement);
-            body.appendChild(dateElement);
-            body.appendChild(commentElement);
-            image.appendChild(imageElement);
-            published.appendChild(image);    
-            published.appendChild(body);
-            table.appendChild(published);
+      //   newElement.classList.add('item')
+      published.classList.add("comments__published");
+      nameElement.classList.add("username");
+      commentElement.classList.add("input");
+      dateElement.classList.add("date");
+      imageElement.classList.add("comments--icon");
+      image.classList.add("comments__img");
+      body.classList.add("comments__body");
+
+      //   comments.appendChild(newElement)
+      body.appendChild(nameElement);
+      body.appendChild(dateElement);
+      body.appendChild(commentElement);
+      image.appendChild(imageElement);
+      published.appendChild(image);
+      published.appendChild(body);
+      table.appendChild(published);
     }
-}
-window.document.onload = displayComments();
+  }
+  window.document.onload = displayComments();
 
+  // Create comment with form
 
-// Create comment with form
-function createComment (){
+  function createComment(name, comment) {
     axios
-    .post("https://project-1-api.herokuapp.com/comments?api_key=authkey", {
-        name: document.querySelector('#Name').value,
-        comment: document.querySelector('#Comment').value
-       })
+      .post("https://project-1-api.herokuapp.com/comments?api_key=authkey", {
+        name: name,
+        comment: comment
+      })
 
-       .then(result => {
-           if(name !== '' && comment !== ''){
-           displayComments();
-           } else{
-            return 404;           }
-       })
-       .catch( result =>{
-           return 404;
-       })
+      .then(result => {
+        displayComments();
+      })
+      .catch(error => {
+        console.log("404 error");
+      });
+  }
 
-    }
+  document.getElementById("Btn").addEventListener("click", submit);
 
-
-document.getElementById("Btn").addEventListener("click", submit) 
-
-function submit(event) {
+  function submit(event) {
     event.preventDefault(); // prevent the webpage from reloading
-    createComment();
-    transformComment();
-    document.getElementById("myForm").reset();
+    let inputName = document.querySelector("#Name").value;
+    let inputComment = document.querySelector("#Comment").value;
+    if (inputName !== "" && inputComment !== "") {
+      createComment(inputName, inputComment);
+      transformComment();
+      document.getElementById("myForm").reset();
+    } else {
+      alert("The comment and name inputs are empty");
     }
-})
+  }
+});
