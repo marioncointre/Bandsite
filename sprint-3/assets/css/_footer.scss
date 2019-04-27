@@ -8,7 +8,7 @@
     justify-content: center;
 
     .footer {
-      &__contact {
+      &_contact {
         width: 100%;
         box-sizing: border-box;
         padding-left: 1em;
@@ -66,7 +66,7 @@
         }
       }
 
-      &__copyright {
+      &_copyright {
         //copyright mention
         font-weight: 100;
         margin-top: 40px;

@@ -15,12 +15,17 @@ function displayComments(comments) {
     let dateElement = document.createElement("div");
     let imageElement = document.createElement("div");
 
-    // adding value to variable
     nameElement.innerText = comments[i].name;
-    dateElement.innerText = comments[i].timestamp;
+    let dateStamp = new Date(comments[i].timestamp * 1000);
+    dateStamp =
+      dateStamp.getDate() +
+      "/" +
+      (dateStamp.getMonth() + 1) +
+      "/" +
+      dateStamp.getFullYear();
+    dateElement.innerText = dateStamp;
     commentElement.innerText = comments[i].comment;
 
-    //   newElement.classList.add('item')
     published.classList.add("comments__published");
     nameElement.classList.add("username");
     commentElement.classList.add("input");
@@ -29,7 +34,6 @@ function displayComments(comments) {
     image.classList.add("comments__img");
     body.classList.add("comments__body");
 
-    //   comments.appendChild(newElement)
     body.appendChild(nameElement);
     body.appendChild(dateElement);
     body.appendChild(commentElement);
