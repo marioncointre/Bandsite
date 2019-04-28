@@ -9,7 +9,7 @@
       // Hero section
       width: 100%;
       height: 472px;
-      background-image: url("../../assets/Images/ana-grave-156852-unsplash.jpg");
+      background-image: url("../assets/Images/ana-grave-156852-unsplash.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       @include column;
@@ -53,7 +53,7 @@
       margin-bottom: 32px;
 
       h1 {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
 
       .shows-table {
@@ -81,7 +81,6 @@
 
         .event {
           border-bottom: 1px solid $mercury-color;
-          margin-top: 32px;
 
           h5 {
             color: $silver-color;
@@ -188,8 +187,11 @@
         }
 
         .event {
-          margin-top: 0px;
           vertical-align: baseline;
+
+          td {
+            height: 90px;
+          }
 
           p {
             margin-top: 16px;
