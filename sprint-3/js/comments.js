@@ -16,7 +16,7 @@ function displayComments(comments) {
     let imageElement = document.createElement("div");
 
     nameElement.innerText = comments[i].name;
-    let dateStamp = new Date(comments[i].timestamp * 1000);
+    let dateStamp = new Date(comments[i].timestamp);
     dateStamp =
       dateStamp.getDate() +
       "/" +
